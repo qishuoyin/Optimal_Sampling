@@ -1,4 +1,5 @@
 .DS_Store
 .env
 datasets/
+exp/exp2_application/data_raw
 exp/exp2_application/data_plasmode
