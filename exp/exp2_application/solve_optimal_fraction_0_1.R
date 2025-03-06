@@ -8,16 +8,13 @@ parent_parent_dir = dirname(parent_dir)
 
 # import necessary sources
 fun_dir = paste(c(parent_parent_dir, "fun"), collapse="/")
-# source(paste(c(fun_dir, "fun_plasmode_datasets.R"), collapse="/"))
-# source(paste(c(fun_dir, "fun_two_stage_tests.R"), collapse="/"))
-# source(paste(c(fun_dir, "fun_power_evaluation.R"), collapse="/"))
 source(paste(c(fun_dir, "fun_optimal_fraction.R"), collapse="/"))
 
 # set parameters
-sim_num=1000 # simulation times
-effect_ratio=0.1
-effect_size_lower=0.05
-effect_size_upper=0.2
+sim_num = 1000 # simulation times
+effect_ratio = 0.1
+effect_size_lower = 0.05
+effect_size_upper = 0.2
 Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
 xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
 method = "rank"

@@ -10,24 +10,9 @@ parent_parent_dir = dirname(parent_dir)
 # source(paste(c(current_dir, "fun_plasmode_datasets.R"), collapse="/"))
 # source(paste(c(current_dir, "fun_two_stage_tests.R"), collapse="/"))
 # source(paste(c(current_dir, "fun_power_evaluation.R"), collapse="/"))
-
 source(file.path(dirname(sys.frame(1)$ofile), "fun_plasmode_datasets.R"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_two_stage_tests.R"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
-
-# set parameters
-# sim_num=1000 # simulation times
-# effect_ratio=0.1
-# effect_size_lower=0.05
-# effect_size_upper=0.2
-# Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
-# xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
-# method = "rank"
-# plasmode_dir_sub_1 = paste(c(current_dir, "data_plasmode", "data_plasmode_0_1"), collapse="/")
-# plasmode_dir = plasmode_dir_sub_1
-# test_result_dir = paste(c(current_dir, "test_results"), collapse="/")
-# final_result_dir = current_dir
-
 
 
 optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
