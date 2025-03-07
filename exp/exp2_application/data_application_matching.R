@@ -46,7 +46,7 @@ for (class in 1:length(full_match$subclass)) {
     for (j in control_indices) {
       data_pair_subclass_diff[k, ] = data_full_cleaned[i, -c(1:9)]-data_full_cleaned[j, -c(1:9)]
       data_pair_subclass_control[k, ] = data_full_cleaned[j, -c(1:9)]
-      data_pair_subclass_diff[k, ] = data_full_cleaned[i, -c(1:9)]
+      data_pair_subclass_treat[k, ] = data_full_cleaned[i, -c(1:9)]
       k = k+1
     }
   }
