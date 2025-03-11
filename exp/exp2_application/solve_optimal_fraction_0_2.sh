@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=data_match_pair      # create a short name for your job
+#SBATCH --job-name=solve_optimal_fraction_0_2      # create a short name for your job
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=30        # cpu-cores per task (>1 if multithread tasks)
