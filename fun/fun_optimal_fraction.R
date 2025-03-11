@@ -17,7 +17,7 @@ source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
 
 optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
   
-  generate_plasmode = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
+  effect_vec = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
   
   print("generate data:")
   
@@ -66,7 +66,7 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
       }
       
       # evaluate power
-      power = evaluation(planning_result, analysis_result)
+      power = evaluation(effect_vec, analysis_result)
       power_mat[which(Gamma_vec == Gamma), which(xi_vec == xi)] = power
       
     }

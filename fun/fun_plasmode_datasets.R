@@ -11,6 +11,9 @@ plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_rat
   # effect_size_lower: lower bound of generated effect size (default to be 0.05)
   # effect_size_upper: upper bound of generated effect size (default to be 0.2)
   
+  # returns: 
+  # effect_vec: vector of length K indicating whether effect is generated
+  
   # sort outcomes assumed to be affected
   col_indices = 1:ncol(data_control)
   treat_indices = sort(sample(col_indices, round(effect_ratio*ncol(data_control)), replace = FALSE), decreasing = FALSE)
@@ -36,6 +39,11 @@ plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_rat
     file_path = paste(c(output_dir, file_name), collapse="/")
     write.csv(data_generate, file_path, row.names = FALSE)
   }
+  
+  effect_vec = rep(0, ncol(data_control))
+  effect_vec[treat_indices] = 1
+  effect_vec[control_indices] = 0
+  return(effect_vec)
   
 }
 
