@@ -17,7 +17,7 @@ evaluation <- function(effect_vec, analysis_result) {
 
 
 
-optimal_fraction <- function(evaluation_vec, err_tolerant=0.05){
+optimal_solution <- function(evaluation_vec, err_tolerant=0.05){
   
   # arguments: 
   # evaluation_vec: vector of test power at each split fraction

@@ -73,7 +73,7 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
     
     # compute the optimal fraction results set
     evaluation_vec = power_mat[which(Gamma_vec == Gamma), ]
-    optimal_fraction_set = optimal_fraction(evaluation_vec, err_tolerant=0.05)
+    optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant=0.05)
     max_power = optimal_fraction_set$max_power
     fraction_lower = optimal_fraction_set$fraction_lower
     fraction_upper = optimal_fraction_set$fraction_upper
@@ -94,7 +94,6 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
   }
   
   # save final results (required)
-  result_file_name = paste(c(paste(c("final_result", "method", method), collapse="_"), "csv"), collapse=".")
   result_file_path = paste(c(final_result_dir, result_file_name), collapse="/")
   write.csv(result_mat, result_file_path, row.names = FALSE)
   
