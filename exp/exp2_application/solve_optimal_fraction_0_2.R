@@ -16,8 +16,8 @@ source(paste(c(fun_dir, "fun_optimal_fraction.R"), collapse="/"))
 # set parameters
 sim_num=1000 # simulation times
 effect_ratio=0.2
-effect_size_lower=0.05
-effect_size_upper=0.2
+effect_size_lower=0.01
+effect_size_upper=0.05
 Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
 xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
 err_tolerant = 0.01
