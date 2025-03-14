@@ -1,8 +1,11 @@
 .DS_Store
 .env
 datasets/
+exp/exp1_simulation/slurm_file
 exp/exp1_simulation/data_whole
 exp/exp1_simulation/data_pair
 exp/exp1_simulation/data_simulation
+
+exp/exp2_application/slurm_file
 exp/exp2_application/data_raw
 exp/exp2_application/data_plasmode
