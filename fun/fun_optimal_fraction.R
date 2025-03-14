@@ -15,7 +15,7 @@ source(file.path(dirname(sys.frame(1)$ofile), "fun_two_stage_tests.R"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
 
 
-optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
+optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, err_tolerant, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
   
   effect_vec = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
   
@@ -73,7 +73,7 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
     
     # compute the optimal fraction results set
     evaluation_vec = power_mat[which(Gamma_vec == Gamma), ]
-    optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant=0.05)
+    optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant)
     max_power = optimal_fraction_set$max_power
     fraction_lower = optimal_fraction_set$fraction_lower
     fraction_upper = optimal_fraction_set$fraction_upper
