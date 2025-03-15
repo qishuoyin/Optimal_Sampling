@@ -9,9 +9,6 @@ parent_parent_dir = dirname(parent_dir)
 
 # import necessary sources
 fun_dir = paste(c(parent_parent_dir, "fun"), collapse="/")
-# source(paste(c(fun_dir, "fun_plasmode_datasets.R"), collapse="/"))
-# source(paste(c(fun_dir, "fun_two_stage_tests.R"), collapse="/"))
-# source(paste(c(fun_dir, "fun_power_evaluation.R"), collapse="/"))
 source(paste(c(fun_dir, "fun_optimal_fraction.R"), collapse="/"))
 
 # set parameters
@@ -24,7 +21,7 @@ xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample frac
 err_tolerant = 0.01
 method = "rank"
 plasmode_dir = paste(c(current_dir, "data_plasmode", "data_plasmode_0_3"), collapse="/")
-test_result_dir = paste(c(current_dir, "test_results", "test_results_plasmode_0_3"), collapse="/")
+# test_result_dir = paste(c(current_dir, "test_results", "test_results_plasmode_0_3"), collapse="/")
 final_result_dir = current_dir
 result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_3_effect_very_small"), collapse="_"), "csv"), collapse=".")
 
