@@ -1,5 +1,6 @@
 # Optimal Sampling
-# Application - Solve Optimal Split Fraction (generate 10% outcomes affected in plasmode dataset)
+# Application - Solve Optimal Split Fraction 
+# (generate 10% outcomes affected in plasmode dataset with effect size to be very small: 0.01 - 0.05)
 
 # set relative path
 current_dir = getwd()
