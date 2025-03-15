@@ -29,6 +29,3 @@ result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_r
 data_control = read.csv(paste(c(current_dir, "data_pair_control.csv"), collapse="/"))
 result_mat = optimal_fraction(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, err_tolerant, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name)
 
-
-
-
