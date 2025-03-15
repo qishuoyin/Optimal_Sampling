@@ -1,5 +1,6 @@
 # Optimal Sampling
-# Application - Solve Optimal Split Fraction (generate 30% outcomes affected in plasmode dataset)
+# Application - Solve Optimal Split Fraction 
+# (generate 30% outcomes affected in plasmode dataset with effect size to be very small: 0.01 - 0.05)
 
 # set relative path
 current_dir = getwd()
@@ -25,7 +26,7 @@ method = "rank"
 plasmode_dir = paste(c(current_dir, "data_plasmode", "data_plasmode_0_3"), collapse="/")
 test_result_dir = paste(c(current_dir, "test_results", "test_results_plasmode_0_3"), collapse="/")
 final_result_dir = current_dir
-result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_3"), collapse="_"), "csv"), collapse=".")
+result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_3_effect_very_small"), collapse="_"), "csv"), collapse=".")
 
 # solve optimal sample split fraction
 data_control = read.csv(paste(c(current_dir, "data_pair_control.csv"), collapse="/"))
