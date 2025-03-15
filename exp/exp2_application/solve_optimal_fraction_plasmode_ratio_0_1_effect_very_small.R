@@ -21,14 +21,11 @@ xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample frac
 err_tolerant = 0.01
 method = "rank"
 plasmode_dir = paste(c(current_dir, "data_plasmode", "data_plasmode_0_1"), collapse="/")
-test_result_dir = paste(c(current_dir, "test_results", "test_results_plasmode_0_1"), collapse="/")
+# test_result_dir = paste(c(current_dir, "test_results", "test_results_plasmode_0_1"), collapse="/")
 final_result_dir = current_dir
 result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_1_effect_very_small"), collapse="_"), "csv"), collapse=".")
 
 # solve optimal sample split fraction
 data_control = read.csv(paste(c(current_dir, "data_pair_control.csv"), collapse="/"))
 result_mat = optimal_fraction(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, err_tolerant, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name)
-
-
-
 
