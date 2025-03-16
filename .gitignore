@@ -5,6 +5,8 @@ exp/exp1_simulation/logs
 exp/exp1_simulation/data_whole
 exp/exp1_simulation/data_pair
 exp/exp1_simulation/data_simulation
+exp/exp1_simulation/test_result
+exp/exp1_simulation/evaluation_result
 
 exp/exp2_application/logs
 exp/exp2_application/data_raw
