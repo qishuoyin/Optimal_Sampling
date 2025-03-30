@@ -1,5 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=data_sample_simulation_example      # create a short name for your job
+#SBATCH --output=logs/slurm-%A.%a.out                  # stdout file
+#SBATCH --error=logs/slurm-%A.%a.err                   # stderr file
 #SBATCH --nodes=1                                      # node count
 #SBATCH --ntasks=1                                     # total number of tasks across all nodes
 #SBATCH --cpus-per-task=30                             # cpu-cores per task (>1 if multithread tasks)
