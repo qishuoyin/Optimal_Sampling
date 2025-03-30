@@ -26,6 +26,7 @@ method = "naive"
 
 
 test_result_dir = paste(c(current_dir, "test_results"), collapse="/")
+final_result_dir = paste(c(current_dir, "evaluation_result"), collapse="/")
 
 
 for(i1 in 1:length(K_vec)) {
