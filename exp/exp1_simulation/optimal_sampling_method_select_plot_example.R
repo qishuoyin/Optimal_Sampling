@@ -17,7 +17,7 @@ source(paste(c(fun_dir, "fun_power_evaluation.R"), collapse="/"))
 
 
 # Conduct simulation by the optimal sample split method - "rank"
-test_sim = 100 # simulation times
+test_sim = 1000 # simulation times
 I_vec = 200 # c(100, 200, 500, 1000) # number of units
 K_vec = 10 # c(10, 100, 500, 1000) # number of outcomes
 Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # design sensitivity
