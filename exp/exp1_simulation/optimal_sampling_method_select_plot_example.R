@@ -88,7 +88,7 @@ for(i1 in 1:length(K_vec)) {
       
       # compute the optimal fraction results set
       evaluation_vec = power_mat[which(Gamma_vec == Gamma), ]
-      optimal_fraction_set = optimal_fraction(evaluation_vec, err_tolerant=0.05)
+      optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant=0.05)
       max_power = optimal_fraction_set$max_power
       fraction_lower = optimal_fraction_set$fraction_lower
       fraction_upper = optimal_fraction_set$fraction_upper
