@@ -33,6 +33,7 @@ Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # design sensitivity
 xi_vec = seq(from = 0.01, to = 0.99, by = 0.01) # analysis sample fraction
 method = "select"
 test_result_dir = paste(c(current_dir, "test_results"), collapse="/")
+final_result_dir = paste(c(current_dir, "evaluation_result"), collapse="/")
 
 K = param1
 I = param2
