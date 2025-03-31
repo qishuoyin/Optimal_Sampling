@@ -57,8 +57,8 @@ for(i3 in 1:length(Gamma_vec)) {
     
     xi = xi_vec[i4]
     
-    planning_result = matrix(0, test_sim, test_sim)
-    analysis_result = matrix(0, test_sim, test_sim)
+    planning_result = matrix(0, ncol = K, nrow = test_sim)
+    analysis_result = matrix(0, ncol = K, nrow = test_sim)
     
     for(t in 1:test_sim) {
       
