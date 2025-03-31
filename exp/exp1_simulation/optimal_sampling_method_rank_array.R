@@ -38,6 +38,12 @@ final_result_dir = paste(c(current_dir, "evaluation_result"), collapse="/")
 K = param1
 I = param2
 
+eta = 0.1 # ratio of affected outcomes
+Kt = round(eta*K) # number of outcomes affected by the treatment
+tau_effect = rep(1, Kt)
+tau_zero = rep(0, K - Kt)
+tau_vec = c(tau_effect, tau_zero) # vector of ground truth treatment effect
+
 power_mat = matrix(0, nrow = length(Gamma_vec), ncol = length(xi_vec))
 result_mat = matrix(0, nrow = length(Gamma_vec), ncol = 3)
 rownames(result_mat) = Gamma_vec
@@ -84,7 +90,7 @@ for(i4 in 1:length(xi_vec)) {
   write.csv(analysis_result, analysis_file_path, row.names = FALSE)
   
   # evaluate power
-  power = evaluation(planning_result, analysis_result)
+  power = evaluation(tau_vec, analysis_result)
   power_mat[which(Gamma_vec == Gamma), which(xi_vec == xi)] = power
   
 }
