@@ -115,7 +115,7 @@ for(i1 in 1:length(K_vec)) {
     
     # save evaluation results (optional)
     power_file_name = paste(c(paste(c("example", "power", "outcome", K, "I", I, "method", method), collapse="_"), "csv"), collapse=".")
-    power_file_path = paste(c(test_result_dir, power_file_name), collapse="/") 
+    power_file_path = paste(c(final_result_dir, power_file_name), collapse="/") 
     write.csv(power_mat, power_file_path, row.names = FALSE)
     
     # save final results (required)
