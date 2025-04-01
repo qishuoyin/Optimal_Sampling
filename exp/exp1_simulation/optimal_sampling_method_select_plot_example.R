@@ -87,6 +87,9 @@ for(i1 in 1:length(K_vec)) {
         write.csv(analysis_result, analysis_file_path, row.names = FALSE)
         
         # evaluate power
+        print("tau_vec:")
+        print(tau_vec)
+        
         power = evaluation(tau_vec, analysis_result)
         power_mat[which(Gamma_vec == Gamma), which(xi_vec == xi)] = power
         
