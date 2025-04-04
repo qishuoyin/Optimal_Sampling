@@ -10,7 +10,7 @@ evaluation <- function(effect_vec, analysis_result) {
   # return:
   # test_power: test power at each split fraction
   effect_index = which(effect_vec > 0)
-  test_power = sum(analysis_result[effect_index]) / (nrow(analysis_result)*length(effect_index))
+  test_power = sum(analysis_result[, effect_index]) / (nrow(analysis_result)*length(effect_index))
   return(test_power)
   
 }
