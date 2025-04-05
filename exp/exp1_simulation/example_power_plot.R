@@ -8,7 +8,8 @@ library(ggplot2)
 current_dir <- getwd()
 
 # Load dataset
-data_dir <- file.path(current_dir, "evaluation_result", "power_outcome_10_I_200_method_select.csv")
+# data_dir <- file.path(current_dir, "evaluation_result", "power_outcome_10_I_200_method_select.csv")
+data_dir <- file.path(current_dir, "evaluation_result", "example_power_outcome_10_I_200_method_select.csv")
 
 # Read the dataset without header
 df <- read.csv(data_dir, header = FALSE, stringsAsFactors = FALSE)
