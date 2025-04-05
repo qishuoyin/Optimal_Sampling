@@ -103,11 +103,6 @@ for(i1 in 1:length(K_vec)) {
       result_mat[which(Gamma_vec == Gamma), "fraction_lower"] = fraction_lower
       result_mat[which(Gamma_vec == Gamma), "fraction_upper"] = fraction_upper
       
-      # save an example power file (optional)
-      example_file_name = paste(c(paste(c("power", "outcome", K, "I", I, "method", method), collapse="_"), "csv"), collapse=".")
-      example_file_path = paste(c(current_dir, example_file_name), collapse="/")
-      write.csv(evaluation_vec, example_file_path, row.names = FALSE)
-      
     }
     
     # save evaluation results (optional)
