@@ -103,7 +103,6 @@ for(i1 in 1:length(K_vec)) {
       result_mat[which(Gamma_vec == Gamma), "fraction_lower"] = fraction_lower
       result_mat[which(Gamma_vec == Gamma), "fraction_upper"] = fraction_upper
       
-      
     }
     
     # save evaluation results (optional)
