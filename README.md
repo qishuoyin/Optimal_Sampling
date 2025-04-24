@@ -35,10 +35,12 @@ The package is modularized into the following core R functions:
 
 ## Methodology
 
-The methodology implemented is built on sample splitting and multiple hypothesis testing:
+The two-stage sample split methodology implemented is built on sample splitting and multiple hypothesis testing:
 
 - **Stage 1** (Planning): Use a split of the matched data to identify promising outcomes (selection or rank).
 - **Stage 2** (Testing): Use the remaining data to evaluate the treatment effects.
+
+The sample split fraction can be the solution of the optimal fraction by the simulations on the semi-synthetic plasmode datasets or adapted from the empirical recommended ones. 
 
 ### Two Main Test Types:
 
