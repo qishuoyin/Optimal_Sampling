@@ -70,9 +70,9 @@ results <- fun_two_stage_tests(data, split_frac = opt_frac, method = "rank")
 
 ## Reference
 
-If you use this package, please cite the following paper:
+If you want to use this package, please cite the following paper:
 
-> Yin, Q. and Small, D. (2025). *Optimal Sample Split for Treatment Effect Tests on High Dimensional Outcome Space*. Biometrics (Submitted). [[PDF\]](link-to-paper)
+> Yin, Q. and Small, D. (2025). *Optimal Sample Split for Treatment Effect Tests on High Dimensional Outcome Space*. Biometrics (Submitted).
 
 ## Authors
 
@@ -86,6 +86,4 @@ If you use this package, please cite the following paper:
 ---
 
 This package is actively maintained. Contributions and feedback are welcome.
-
-GitHub repository: [https://github.com/qishuoyin/Optimal\_Sampling](https://github.com/qishuoyin/Optimal_Sampling)
 
