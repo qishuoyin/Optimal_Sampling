@@ -1,6 +1,6 @@
 # OptimalSampling
 
-**An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal Sample Split and Multiple Hypothesis Tests**
+An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal Sample Split and Multiple Hypothesis Tests
 
 ## Overview
 
@@ -38,7 +38,9 @@ The sample split fraction can be the solution of the optimal fraction by the sim
 - `Optimal Sample Split Rank Test`: Controls false discovery rate (FDR).
 
 
+## Core Functions
 
+This repository contains two parts - the functions in the package to test for the treatment effect, and the experiments to conduct the simulations and application. The core functions that build up the treatment effect test package are: 
 
 
 ## Core Functions
