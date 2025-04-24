@@ -23,16 +23,6 @@ library(devtools)
 devtools::install_github("qishuoyin/Optimal_Sampling")
 ```
 
-## Core Functions
-
-The package is modularized into the following core R functions:
-
-- `fun_optimal_fraction()`: Numerically determine the optimal sample split fraction.
-- `fun_plasmode_datasets()`: Generate plasmode datasets simulating treatment effects on selected outcomes.
-- `fun_power_evaluation()`: Evaluate test power under varying sample splits.
-- `fun_two_stage_tests()`: Conduct Optimal Sample Split Selection or Rank tests.
-- `fun_vanilla_Bonferroni_test()`: Benchmark using Bonferroni correction on high-dimensional outcomes.
-
 ## Methodology
 
 The two-stage sample split methodology implemented is built on sample splitting and multiple hypothesis testing:
@@ -46,6 +36,78 @@ The sample split fraction can be the solution of the optimal fraction by the sim
 
 - `Optimal Sample Split Selection Test`: Controls family-wise error rate (FWER).
 - `Optimal Sample Split Rank Test`: Controls false discovery rate (FDR).
+
+
+
+
+
+## Core Functions
+
+### Function Descriptions
+
+#### `fun_optimal_fraction.R`
+**Function: `optimal_fraction()`**  
+Numerically determine the optimal sample split fraction for maximizing test power.
+
+**Arguments:**
+- `data_control`: Matrix of matched control group outcomes.
+- `sim_num`: Number of plasmode datasets to simulate.
+- `effect_ratio`: Proportion of affected outcomes.
+- `effect_size_lower`, `effect_size_upper`: Effect size bounds.
+- `Gamma_vec`: Vector of bias parameters.
+- `xi_vec`: Candidate values of split fractions.
+- `err_tolerant`: Tolerance level for choosing near-optimal solution.
+- `method`: Either `"rank"` or `"select"` (default: "rank").
+- `plasmode_dir`: Directory with generated plasmode datasets.
+- `test_result_dir`: Optional intermediate result storage.
+- `final_result_dir`: Directory for final output.
+- `result_file_name`: Output filename.
+
+#### `fun_plasmode_datasets.R`
+**Function: `plasmode_datasets()`**  
+Generates synthetic datasets with simulated treatment effects.
+
+**Arguments:**
+- `data_control`: Matched control matrix.
+- `output_dir`: Directory to save results.
+- `sim_num`: Number of simulations (default: 1000).
+- `effect_ratio`: Ratio of affected outcomes (default: 0.1).
+- `effect_size_lower`, `effect_size_upper`: Range of effect sizes.
+
+#### `fun_power_evaluation.R`
+**Function: `evaluation()`**  
+Computes power across different sample splits.
+
+**Arguments:**
+- `effect_vec`: True effect indicators.
+- `analysis_result`: Matrix of test outcomes.
+
+**Function: `optimal_solution()`**  
+Identifies the best-performing sample split fraction.
+
+**Arguments:**
+- `evaluation_vec`: Test power across splits.
+- `err_tolerant`: Tolerance range (default: 0.05).
+
+#### `fun_two_stage_tests.R`
+Implements the two-stage hypothesis testing procedure.
+
+**Functions and Arguments:**
+- `sgn(x)`: Sign function.
+- `Wilcoxon_test(vec)`: Signed-rank test.
+- `data_split(xi, V)`: Split matched data.
+- `planning_test(Gamma, xi, V_planning, method)`: Planning stage.
+- `analysis_test(V_analysis, H_order, method)`: Analysis stage.
+- `treatment_detection(Gamma, xi, V, method)`: Full pipeline.
+
+#### `fun_vanilla_Bonferroni_test.R`
+**Function: `Bonferroni_test()`**  
+Baseline FWER control using Bonferroni correction.
+
+**Arguments:**
+- `Gamma`: Bias sensitivity level.
+- `V`: Paired differences matrix.
+
 
 ## Usage Example
 
@@ -87,4 +149,6 @@ If you want to use this package, please cite the following paper:
 ---
 
 This package is actively maintained. Contributions and feedback are welcome.
+
+
 
