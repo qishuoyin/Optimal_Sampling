@@ -10,7 +10,6 @@
 
 The package allows practitioners to:
 
-- Test treatment effects robust to unmeasured confounding.
 - Solve for the optimal sample split fraction to conduct multiple hypothesis tests for treatment effect.
 - Apply robust multiple hypothesis tests on matched pair datasets under the solved (or recommmend) optimal sample split fraction. 
 
