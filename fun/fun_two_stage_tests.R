@@ -23,6 +23,7 @@ Wilcoxon_test <- function(vec) {
   }
   
   return(Wilcoxon_t)
+  
 }
 
 # Part 2: data split
@@ -30,12 +31,12 @@ Wilcoxon_test <- function(vec) {
 data_split <- function(xi, V) {
   
   # arguments:
-  # xi: fraction of analysis sample
-  # V: data set
+  # xi: fraction of analysis sample - float in (0, 1)
+  # V: data set - matrix of dimension (I, K)
    
   # returns:
-  # V_planning: planning sample  with dimension ((1-xi)*I, K)
-  # V_analysis: analysis sample with dimension (xi*I, K)
+  # V_planning: planning sample - matrix of dimension ((1-xi)*I, K)
+  # V_analysis: analysis sample - matrix of dimension (xi*I, K)
   
   I = nrow(V) # data set size
   plan_size = round((1-xi)*I)
@@ -45,8 +46,8 @@ data_split <- function(xi, V) {
   V_analysis = V[-index, ] #as.matrix(V[-index, ])
   
   return_list = list(V_planning = V_planning, V_analysis = V_analysis)
-  
   return(return_list)
+  
 }
 
 # Part 3: test functions
@@ -54,15 +55,15 @@ data_split <- function(xi, V) {
 planning_test <- function(Gamma, xi, V_planning, method) {
   
   # arguments:
-  # Gamma: desgin sensitivity
-  # xi: fraction of analysis sample
-  # V_planning: planning sample ((1-xi)*I, K)
-  # K: number of outcomes
+  # Gamma: design sensitivity - float >= 1
+  # xi: fraction of analysis sample - float in (0, 1)
+  # V_planning: planning sample -matrix of dimension ((1-xi)*I, K)
+  # K: number of outcomes - int
   # method: "naive", "select", "rank"
    
   # return: 
   # H_order: analysis outcome by decreasing order
-  # (in naive split case: the outcome with the largest test value in planning test)
+  # (in naive split case: the outcome with the largest test value in the planning test)
   
   K = ncol(V_planning)
   I = round(nrow(V_planning) / (1-xi))
@@ -85,7 +86,7 @@ planning_test <- function(Gamma, xi, V_planning, method) {
     K = ncol(V_planning)
     T_planning = numeric(K)
     
-    # compute corresponding threshold of the Wilcoxon's test given Gamma for planning set
+    # compute corresponding threshold of the Wilcoxon's test given Gamma for the planning set
     kappa = Gamma / (1+Gamma)
     c_p = kappa*((1-xi)*I)*((1-xi)*I+1) / 2 + qnorm(1-alpha_p) * sqrt(kappa*(1-kappa)*((1-xi)*I)*((1-xi)*I+1)*(2*(1-xi)*I+1) / 6)
     
@@ -140,7 +141,7 @@ analysis_test <- function(V_analysis, H_order, method) {
   return(T_hat)
 }
 
-# Part 4: detection function (detection whether an outcome has treatment effect)
+# Part 4: detection function (detection whether an outcome has a treatment effect)
 treatment_detection <- function(Gamma, xi, V, method) {
   
   # arguments:
@@ -154,7 +155,7 @@ treatment_detection <- function(Gamma, xi, V, method) {
   # plan_result: selection or rank results from the planning stage
   # analysis_result: test results from the analysis stage
   
-  # define standard deviation in sample and significance level for test
+  # define standard deviation in sample and significance level for the test
   omega = 1 # standard deviation
   alpha_a = 0.05 # significance level for analysis sample
   kappa = Gamma / (1+Gamma)
