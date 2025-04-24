@@ -45,6 +45,8 @@ This repository contains two parts - the functions in the package to test for th
 
 ## Core Functions
 
+(1) 
+
 ### Function Descriptions
 
 #### `fun_optimal_fraction.R`
