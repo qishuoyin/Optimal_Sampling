@@ -6,10 +6,10 @@ current_dir = getwd()
 parent_dir = dirname(getwd())
 parent_parent_dir = dirname(parent_dir)
 
-# import necessary sources
-source(file.path(dirname(sys.frame(1)$ofile), "fun_plasmode_datasets.R"))
-source(file.path(dirname(sys.frame(1)$ofile), "fun_two_stage_tests.R"))
-source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
+# import necessary sources (needed when writing code locally but not needed in a R package)
+# source(file.path(dirname(sys.frame(1)$ofile), "fun_plasmode_datasets.R"))
+# source(file.path(dirname(sys.frame(1)$ofile), "fun_two_stage_tests.R"))
+# source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
 
 
 optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, err_tolerant, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
