@@ -52,17 +52,27 @@ The experiments conducted by this package are located in the `exp` folder. They 
 ## Usage Example
 
 ```R
-# Step 1: Generate or load matched pairs dataset (I pairs, K outcomes)
-# Example: I = 200, K = 100
 
-# Step 2: Generate plasmode datasets
-plasmodes <- fun_plasmode_datasets(data, eta = 0.1, effect_size_range = c(0.05, 0.2))
+# Step 0: Load your dataset on outcomes for control
+data_control = read.csv("Your_data_control_path")
 
-# Step 3: Determine optimal split fraction
-opt_frac <- fun_optimal_fraction(plasmodes)
+# Step 1: Generate plasmode dataset
+plasmode_dir = 'Your_plasmode_save_directory'
+generate_plasmode = plasmode_datasets(data_control, plasmode_dir, sim_num=1000, effect_ratio=0.1, effect_size_lower=0.05, effect_size_upper=0.2)
 
-# Step 4: Run two-stage rank test on the original dataset
-results <- fun_two_stage_tests(data, split_frac = opt_frac, method = "rank")
+# Step 2: Solve optimal sample split fraction
+Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
+xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
+final_result_dir = 'Your_final_result_save_directory'
+result_file_name = 'Your_final_result_file_name'
+final_result_mat = optimal_fraction(data_control, sim_num=1000, effect_ratio=0.1, effect_size_lower=0.05, effect_size_upper=0.2, Gamma_vec, xi_vec, err_tolerant=0.01, method="rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name)
+
+# Step 3: Conduct the two-stage tests on the original dataset by the optimal sample split fraction
+Gamma = 1.5
+optimal_fraction = 0.9
+data_pair = read.csv("Your_data_pair_path")
+test_result = treatment_detection(Gamma=Gamma, xi=optimal_fraction, V=data_pair, method="rank")
+
 ```
 
 
