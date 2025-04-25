@@ -68,10 +68,10 @@ result_file_name = 'Your_final_result_file_name'
 final_result_mat = optimal_fraction(data_control, sim_num=1000, effect_ratio=0.1, effect_size_lower=0.05, effect_size_upper=0.2, Gamma_vec, xi_vec, err_tolerant=0.01, method="rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name)
 
 # Step 3: Conduct the two-stage tests on the original dataset by the optimal sample split fraction
-Gamma = 1.5
+Gamma_test = 1.5
 optimal_fraction = 0.9
 data_pair = read.csv("Your_data_pair_path")
-test_result = treatment_detection(Gamma=Gamma, xi=optimal_fraction, V=data_pair, method="rank")
+test_result = treatment_detection(Gamma=Gamma_test, xi=optimal_fraction, V=data_pair, method="rank")
 
 ```
 
