@@ -80,11 +80,6 @@ opt_frac <- fun_optimal_fraction(plasmodes)
 results <- fun_two_stage_tests(data, split_frac = opt_frac, method = "rank")
 ```
 
-## Applications
-
-- Causal inference with high-dimensional biomedical or social science data
-- Robust treatment effect detection under potential unmeasured confounding
-- Analysis of NHANES or other public health observational datasets
 
 ## Reference
 
