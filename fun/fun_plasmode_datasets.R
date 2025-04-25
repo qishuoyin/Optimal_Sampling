@@ -13,6 +13,7 @@ plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_rat
   
   # returns: 
   # effect_vec: vector of length K indicating whether the effect is generated
+
   
   # sort outcomes assumed to be affected
   col_indices = 1:ncol(data_control)
