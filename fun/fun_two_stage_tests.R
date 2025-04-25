@@ -145,17 +145,17 @@ analysis_test <- function(V_analysis, H_order, method) {
 treatment_detection <- function(Gamma, xi, V, method) {
   
   # arguments:
-  # Gamma: desgin sensitivity
-  # xi: fraction of analysis sample
-  # V: entire sample (I, K)
-  # K: number of outcomes
+  # Gamma: design sensitivity - float >= 1
+  # xi: fraction of analysis sample - float in (0, 1)
+  # V: entire sample - matrix of dimension (I, K)
+  # K: number of outcomes - int
   # method: "naive", "select", "rank"
    
   # returns: 
   # plan_result: selection or rank results from the planning stage
   # analysis_result: test results from the analysis stage
   
-  # define standard deviation in sample and significance level for the test
+  # define standard deviation in the sample and the significance level for the test
   omega = 1 # standard deviation
   alpha_a = 0.05 # significance level for analysis sample
   kappa = Gamma / (1+Gamma)
@@ -170,11 +170,11 @@ treatment_detection <- function(Gamma, xi, V, method) {
   # compute planning T values to choose analysis outcome
   H_order = planning_test(Gamma, xi, V_planning, method)
   
-  # select outcomes in planning test
+  # select outcomes in planning the test
   plan_result = numeric(K)
   plan_result[H_order] = 1
   
-  # compute analysis T values based on planning sample
+  # compute analysis T values based on the planning sample
   T_hat = analysis_test(V_analysis, H_order, method)
   
   # detect outcomes with treatment effect
@@ -182,7 +182,7 @@ treatment_detection <- function(Gamma, xi, V, method) {
   
   if (method == "naive") {
     
-    # compute corresponding threshold of the Wilcoxon's test given Gamma
+    # compute the corresponding threshold of the Wilcoxon's test given Gamma
     c_a = kappa*(xi*I)*(xi*I+1) / 2 + qnorm(1-alpha_a) * sqrt(kappa*(1-kappa)*(xi*I)*(xi*I+1)*(2*xi*I+1) / 6)
     
     # hypothesis result
@@ -192,13 +192,13 @@ treatment_detection <- function(Gamma, xi, V, method) {
     
   } else if (method == "select") {
     
-    # compute corresponding threshold of the Wilcoxon's test given Gamma
+    # compute the corresponding threshold of the Wilcoxon's test given Gamma
     c_a = kappa*(xi*I)*(xi*I+1) / 2 + qnorm(1-alpha_a/length(H_order)) * sqrt(kappa*(1-kappa)*(xi*I)*(xi*I+1)*(2*xi*I+1) / 6)
     analysis_result[H_order[T_hat >= c_a]] = 1
     
   } else if (method == "rank") {
     
-    # compute corresponding threshold of the Wilcoxon's test given Gamma
+    # compute the corresponding threshold of the Wilcoxon's test given Gamma
     alpha_a_vec = alpha_a*(1:length(H_order))/length(H_order)
     c_a_vec = kappa*(xi*I)*(xi*I+1) / 2 + qnorm(1-alpha_a_vec) * sqrt(kappa*(1-kappa)*(xi*I)*(xi*I+1)*(2*xi*I+1) / 6)
     analysis_result[H_order[T_hat >= c_a_vec]] = 1
