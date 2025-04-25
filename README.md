@@ -43,7 +43,7 @@ The sample split fraction can be the solution of the optimal fraction by the sim
 This repository contains two parts - the functions in the package to test for the treatment effect, and the experiments to conduct the simulations and application. The core functions that build up the treatment effect test package are: 
 
 
-## Core Functions
+### Core Functions
 
 (1) **Function: `plasmode_datasets()`**  
 Generate synthetic datasets with simulated treatment effects for optimal sample split fraction solving. (see `fun_plasmode_datasets.R`)
@@ -53,6 +53,15 @@ Numerically determine the optimal sample split fraction for maximizing test powe
 
 (3) **Function: `evaluation()`**  
 Evaluate power across different sample splits. (see `fun_power_evaluation.R`)
+
+
+### Experiments
+
+The experiments conducted by this package are located in the `exp` folder. They are: 
+
+- Simulations on various sample sizes and outcome space dimensions
+- Analysis of NHANES observational datasets of second-hand smoke on children's health
+
 
 
 ## Usage Example
