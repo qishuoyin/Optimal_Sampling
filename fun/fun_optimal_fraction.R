@@ -31,6 +31,7 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
 
   # return: 
   # result_mat: matrix of the final optimal sample split fraction result
+
   
   effect_vec = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
   
