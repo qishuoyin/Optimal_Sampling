@@ -2,6 +2,16 @@
 
 An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal Sample Split and Multiple Hypothesis Tests
 
+## Table of Contents
+
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Main Contents](#Main Contents)
+- [Usage Example](#Usage Example)
+- [Reference](#Reference)
+- [Authors](#Authors)
+
+
 ## Overview
 
 `OptimalSampling` is an R package for conducting sensitivity analysis in observational studies with high-dimensional outcomes. It implements the methodology proposed in:
