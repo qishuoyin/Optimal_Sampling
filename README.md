@@ -23,24 +23,9 @@ library(devtools)
 devtools::install_github("qishuoyin/Optimal_Sampling")
 ```
 
-## Methodology
 
-The two-stage sample split methodology implemented is built on sample splitting and multiple hypothesis testing:
-
-- **Stage 1** (Planning): Use a split of the matched data to identify promising outcomes (selection or rank).
-- **Stage 2** (Testing): Use the remaining data to evaluate the treatment effects.
-
-The sample split fraction can be the solution of the optimal fraction by the simulations on the semi-synthetic plasmode datasets or adapted from the empirical recommended ones. 
-
-### Two Main Test Types:
-
-- `Optimal Sample Split Selection Test`: Controls family-wise error rate (FWER).
-- `Optimal Sample Split Rank Test`: Controls false discovery rate (FDR).
-
-
-## Main Contents in the Repository
-
-This repository contains two parts - the functions in the package to test for the treatment effect, and the experiments to conduct the simulations and application. The core functions that build up the treatment effect test package are: 
+## Main Contents
+This repository contains two parts: the functions in the package for testing the treatment effect, and the experiments for conducting simulations and applications. The core functions that build up the treatment effect test package are: 
 
 
 ### Core Functions
