@@ -94,7 +94,7 @@ If you want to use this package, please cite the following paper:
   Email: [qy1448@princeton.edu](mailto\:qy1448@princeton.edu)
 
 - **Dylan Small**\
-  Department of Statistics and Data Science, University of Pennsylvania
+  Department of Statistics and Data Science, University of Pennsylvania\
   Email: [dsmall@wharton.upenn.edu](mailto\:dsmall@wharton.upenn.edu)
 
 ---
