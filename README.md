@@ -38,79 +38,21 @@ The sample split fraction can be the solution of the optimal fraction by the sim
 - `Optimal Sample Split Rank Test`: Controls false discovery rate (FDR).
 
 
-## Core Functions
+## Main Contents in the Repository
 
 This repository contains two parts - the functions in the package to test for the treatment effect, and the experiments to conduct the simulations and application. The core functions that build up the treatment effect test package are: 
 
 
 ## Core Functions
 
-(1) 
+(1) **Function: `plasmode_datasets()`**  
+Generate synthetic datasets with simulated treatment effects for optimal sample split fraction solving. (in the file `fun_plasmode_datasets.R`)
 
-### Function Descriptions
+(2) **Function: `optimal_fraction()`**  
+Numerically determine the optimal sample split fraction for maximizing test power. (in the file `fun_optimal_fraction.R`)
 
-#### `fun_optimal_fraction.R`
-**Function: `optimal_fraction()`**  
-Numerically determine the optimal sample split fraction for maximizing test power.
-
-**Arguments:**
-- `data_control`: Matrix of matched control group outcomes.
-- `sim_num`: Number of plasmode datasets to simulate.
-- `effect_ratio`: Proportion of affected outcomes.
-- `effect_size_lower`, `effect_size_upper`: Effect size bounds.
-- `Gamma_vec`: Vector of bias parameters.
-- `xi_vec`: Candidate values of split fractions.
-- `err_tolerant`: Tolerance level for choosing near-optimal solution.
-- `method`: Either `"rank"` or `"select"` (default: "rank").
-- `plasmode_dir`: Directory with generated plasmode datasets.
-- `test_result_dir`: Optional intermediate result storage.
-- `final_result_dir`: Directory for final output.
-- `result_file_name`: Output filename.
-
-#### `fun_plasmode_datasets.R`
-**Function: `plasmode_datasets()`**  
-Generates synthetic datasets with simulated treatment effects.
-
-**Arguments:**
-- `data_control`: Matched control matrix.
-- `output_dir`: Directory to save results.
-- `sim_num`: Number of simulations (default: 1000).
-- `effect_ratio`: Ratio of affected outcomes (default: 0.1).
-- `effect_size_lower`, `effect_size_upper`: Range of effect sizes.
-
-#### `fun_power_evaluation.R`
-**Function: `evaluation()`**  
-Computes power across different sample splits.
-
-**Arguments:**
-- `effect_vec`: True effect indicators.
-- `analysis_result`: Matrix of test outcomes.
-
-**Function: `optimal_solution()`**  
-Identifies the best-performing sample split fraction.
-
-**Arguments:**
-- `evaluation_vec`: Test power across splits.
-- `err_tolerant`: Tolerance range (default: 0.05).
-
-#### `fun_two_stage_tests.R`
-Implements the two-stage hypothesis testing procedure.
-
-**Functions and Arguments:**
-- `sgn(x)`: Sign function.
-- `Wilcoxon_test(vec)`: Signed-rank test.
-- `data_split(xi, V)`: Split matched data.
-- `planning_test(Gamma, xi, V_planning, method)`: Planning stage.
-- `analysis_test(V_analysis, H_order, method)`: Analysis stage.
-- `treatment_detection(Gamma, xi, V, method)`: Full pipeline.
-
-#### `fun_vanilla_Bonferroni_test.R`
-**Function: `Bonferroni_test()`**  
-Baseline FWER control using Bonferroni correction.
-
-**Arguments:**
-- `Gamma`: Bias sensitivity level.
-- `V`: Paired differences matrix.
+(3) **Function: `evaluation()`**  
+Evaluate power across different sample splits. (in the file `fun_power_evaluation.R`)
 
 
 ## Usage Example
@@ -149,6 +91,7 @@ If you want to use this package, please cite the following paper:
 
 - **Dylan Small**\
   Department of Statistics and Data Science, University of Pennsylvania
+  Email: [dsmall@wharton.upenn.edu](mailto\:dsmall@wharton.upenn.edu)
 
 ---
 
