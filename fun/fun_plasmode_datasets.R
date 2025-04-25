@@ -5,14 +5,14 @@ plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_rat
   
   # arguments: 
   # data_control: dataset of outcomes for control - the plasmode datasets are generated based on this dataset
-  # output_dir: directory to save the generated plasmode datasets
-  # sim_num: number of plasmode datasets generated (default to be 1000)
-  # effect_ratio: ratio of outcomes assumed to be affected by the treatment (default to be 0.1)
-  # effect_size_lower: lower bound of generated effect size (default to be 0.05)
-  # effect_size_upper: upper bound of generated effect size (default to be 0.2)
+  # output_dir: directory to save the generated plasmode datasets - string
+  # sim_num: number of plasmode datasets generated -int, default to be 1000
+  # effect_ratio: ratio of outcomes assumed to be affected by the treatment -float in (0, 1), default to be 0.1
+  # effect_size_lower: lower bound of generated effect size - float in (0, 1), default to be 0.05
+  # effect_size_upper: upper bound of generated effect size - float in (0, 1), default to be 0.2
   
   # returns: 
-  # effect_vec: vector of length K indicating whether effect is generated
+  # effect_vec: vector of length K indicating whether the effect is generated
   
   # sort outcomes assumed to be affected
   col_indices = 1:ncol(data_control)
