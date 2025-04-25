@@ -10,8 +10,8 @@ An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal 
 
 The package allows practitioners to:
 
-- Solve for the optimal sample split fraction to conduct multiple hypothesis tests for treatment effect.
-- Apply robust multiple hypothesis tests on matched pair datasets under the solved (or recommmend) optimal sample split fraction. 
+- Solve for the optimal sample split fraction to conduct multiple hypothesis tests for the treatment effect.
+- Apply robust multiple hypothesis tests on matched pair datasets under the solved (or recommended) optimal sample split fraction. 
 
 ## Installation
 
@@ -46,13 +46,13 @@ This repository contains two parts - the functions in the package to test for th
 ## Core Functions
 
 (1) **Function: `plasmode_datasets()`**  
-Generate synthetic datasets with simulated treatment effects for optimal sample split fraction solving. (in the file `fun_plasmode_datasets.R`)
+Generate synthetic datasets with simulated treatment effects for optimal sample split fraction solving. (see `fun_plasmode_datasets.R`)
 
 (2) **Function: `optimal_fraction()`**  
-Numerically determine the optimal sample split fraction for maximizing test power. (in the file `fun_optimal_fraction.R`)
+Numerically determine the optimal sample split fraction for maximizing test power. (see `fun_optimal_fraction.R`)
 
 (3) **Function: `evaluation()`**  
-Evaluate power across different sample splits. (in the file `fun_power_evaluation.R`)
+Evaluate power across different sample splits. (see `fun_power_evaluation.R`)
 
 
 ## Usage Example
