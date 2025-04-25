@@ -2,7 +2,7 @@
 # Algorithm Functions - Vanilla Bonferroni Method
 
 # Part 1: basis functions
-# Part 1.1: define sign function
+# Part 1.1: define the sign function
 sgn <- function(x) {
   if (x>0) {
     sgn = 1
@@ -29,13 +29,13 @@ Wilcoxon_test <- function(vec) {
 Bonferroni_test <- function(Gamma, V) {
   
   # arguments:
-  # Gamma: desgin sensitivity
-  # V: planning sample (I, K)
+  # Gamma: design sensitivity - float >= 1
+  # V: planning sample - matrix of dimension ((1-xi)*I, K)
   
   # return: 
-  # detection_result: whether the outcome is tested to receive treatment effect or not
-  # H_order: analysis outcome by decreasing order
-  # (in only splitting case: the outcome with the largest test value in planning test)
+  # detection_result: whether the outcome is tested to receive the treatment effect or not - vector of dimension K
+  # H_order: analysis outcome by decreasing order - logical vector
+  # (in only splitting case: the outcome with the largest test value in the planning test)
   
   K = ncol(V)
   I = nrow(V)
@@ -47,11 +47,11 @@ Bonferroni_test <- function(Gamma, V) {
   K = ncol(V)
   T_value = numeric(K)
   
-  # compute corresponding threshold of the Wilcoxon's test given Gamma for planning set
+  # compute the corresponding threshold of the Wilcoxon's test given Gamma for planning set
   kappa = Gamma / (1+Gamma)
   c_p = kappa*I*(I+1) / 2 + qnorm(1-alpha_p/K) * sqrt(kappa*(1-kappa)*I*(I+1)*(2*I+1) / 6)
   
-  # compute Wilcoxon T value for the K outcomes
+  # compute the Wilcoxon T value for the K outcomes
   for (k in 1:K) {
     T_value[k] = Wilcoxon_test(V[, k])
   }
