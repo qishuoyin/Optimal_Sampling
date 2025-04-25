@@ -117,7 +117,7 @@ analysis_test <- function(V_analysis, H_order, method) {
   # arguments:
   # V_analysis: analysis sample - matrix of dimension (xi*I, K)
   # H_order: analysis outcome by decreasing order (returned from planning test) - logical vector
-  # method: "naive", "select", "rank"
+  # method: "naive", "select", "rank" - string
    
   # return: 
   # T_hat: T value for analysis sample - vector with the same shape as H_order
@@ -149,7 +149,7 @@ treatment_detection <- function(Gamma, xi, V, method) {
   # xi: fraction of analysis sample - float in (0, 1)
   # V: entire sample - matrix of dimension (I, K)
   # K: number of outcomes - int
-  # method: "naive", "select", "rank"
+  # method: "naive", "select", "rank" - string
    
   # returns: 
   # plan_result: selection or rank results from the planning stage - vector of dimension K
