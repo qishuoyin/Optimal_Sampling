@@ -86,11 +86,11 @@ planning_test <- function(Gamma, xi, V_planning, method) {
     K = ncol(V_planning)
     T_planning = numeric(K)
     
-    # compute corresponding threshold of the Wilcoxon's test given Gamma for the planning set
+    # compute the corresponding threshold of the Wilcoxon's test given Gamma for the planning set
     kappa = Gamma / (1+Gamma)
     c_p = kappa*((1-xi)*I)*((1-xi)*I+1) / 2 + qnorm(1-alpha_p) * sqrt(kappa*(1-kappa)*((1-xi)*I)*((1-xi)*I+1)*(2*(1-xi)*I+1) / 6)
     
-    # compute Wilcoxon T value for the K outcomes
+    # compute the Wilcoxon T value for the K outcomes
     for (k in 1:K) {
       T_planning[k] = Wilcoxon_test(V_planning[, k])
     }
@@ -152,8 +152,8 @@ treatment_detection <- function(Gamma, xi, V, method) {
   # method: "naive", "select", "rank"
    
   # returns: 
-  # plan_result: selection or rank results from the planning stage
-  # analysis_result: test results from the analysis stage
+  # plan_result: selection or rank results from the planning stage - vector of dimension K
+  # analysis_result: test results from the analysis stage - vector of dimension K
   
   # define standard deviation in the sample and the significance level for the test
   omega = 1 # standard deviation
@@ -167,7 +167,7 @@ treatment_detection <- function(Gamma, xi, V, method) {
   V_planning = V_split$V_planning
   V_analysis = V_split$V_analysis
   
-  # compute planning T values to choose analysis outcome
+  # compute planning T values to choose the analysis outcome
   H_order = planning_test(Gamma, xi, V_planning, method)
   
   # select outcomes in planning the test
