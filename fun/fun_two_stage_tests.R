@@ -57,12 +57,12 @@ planning_test <- function(Gamma, xi, V_planning, method) {
   # arguments:
   # Gamma: design sensitivity - float >= 1
   # xi: fraction of analysis sample - float in (0, 1)
-  # V_planning: planning sample -matrix of dimension ((1-xi)*I, K)
+  # V_planning: planning sample - matrix of dimension ((1-xi)*I, K)
   # K: number of outcomes - int
   # method: "naive", "select", "rank"
    
   # return: 
-  # H_order: analysis outcome by decreasing order
+  # H_order: analysis outcome by decreasing order - logical vector
   # (in naive split case: the outcome with the largest test value in the planning test)
   
   K = ncol(V_planning)
@@ -115,12 +115,12 @@ planning_test <- function(Gamma, xi, V_planning, method) {
 analysis_test <- function(V_analysis, H_order, method) {
   
   # arguments:
-  # V_analysis: analysis sample (xi*I, K)
-  # H_order: analysis outcome by decreasing order (returned from planning test)
+  # V_analysis: analysis sample - matrix of dimension (xi*I, K)
+  # H_order: analysis outcome by decreasing order (returned from planning test) - logical vector
   # method: "naive", "select", "rank"
    
   # return: 
-  # T_hat: T value for analysis sample
+  # T_hat: T value for analysis sample - vector with the same shape as H_order
   
   if (method == "naive") {
     
