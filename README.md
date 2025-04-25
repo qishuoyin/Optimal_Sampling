@@ -6,8 +6,8 @@ An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal 
 
 - [Overview](#Overview)
 - [Installation](#Installation)
-- [Main Contents](#Main Contents)
-- [Usage Example](#Usage Example)
+- [Contents](#Contents)
+- [Example](#Example)
 - [Reference](#Reference)
 - [Authors](#Authors)
 
@@ -34,7 +34,7 @@ devtools::install_github("qishuoyin/Optimal_Sampling")
 ```
 
 
-## Main Contents
+## Contents
 This repository contains two parts: the functions in the package for testing the treatment effect, and the experiments for conducting simulations and applications. The core functions that build up the treatment effect test package are: 
 
 
@@ -59,7 +59,7 @@ The experiments conducted by this package are located in the `exp` folder. They 
 
 
 
-## Usage Example
+## Example
 
 ```R
 
