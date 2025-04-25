@@ -7,9 +7,6 @@ parent_dir = dirname(getwd())
 parent_parent_dir = dirname(parent_dir)
 
 # import necessary sources
-# source(paste(c(current_dir, "fun_plasmode_datasets.R"), collapse="/"))
-# source(paste(c(current_dir, "fun_two_stage_tests.R"), collapse="/"))
-# source(paste(c(current_dir, "fun_power_evaluation.R"), collapse="/"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_plasmode_datasets.R"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_two_stage_tests.R"))
 source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
@@ -17,9 +14,25 @@ source(file.path(dirname(sys.frame(1)$ofile), "fun_power_evaluation.R"))
 
 optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lower, effect_size_upper, Gamma_vec, xi_vec, err_tolerant, method = "rank", plasmode_dir, test_result_dir=NULL, final_result_dir, result_file_name) {
   
-  effect_vec = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
+  # arguments: 
+  # data_control: dataset of outcomes for control - the plasmode datasets are generated based on this dataset
+  # sim_num: number of plasmode datasets generated -int, default to be 1000
+  # effect_ratio: ratio of outcomes assumed to be affected by the treatment -float in (0, 1), default to be 0.1
+  # effect_size_lower: lower bound of generated effect size - float in (0, 1), default to be 0.05
+  # effect_size_upper: upper bound of generated effect size - float in (0, 1), default to be 0.2
+  # Gamma_vec: vector of possible design sensitivity - vector of float >= 1
+  # xi_vec: vector of fraction of analysis sample - vector of float in (0, 1)
+  # err_tolerant: error could be tolerated in optimal split fraction solution for max power
+  # method = "naive", "select", "rank" - string, default to be "rank"
+  # plasmode_dir: directory to save generated plasmode datasets - string
+  # test_result_dir: directory to save the simulation results by the two-stage tests - string, default to be NULL for not to save them
+  # final_result_dir: directory to save the final optimal sample split fraction result - string
+  # result_file_name: file name of the final optimal sample split fraction result - string
+
+  # return: 
+  # result_mat: matrix of the final optimal sample split fraction result
   
-  print("generate data:")
+  effect_vec = plasmode_datasets(data_control, plasmode_dir, sim_num, effect_ratio, effect_size_lower, effect_size_upper)
   
   power_mat = matrix(0, nrow = length(Gamma_vec), ncol = length(xi_vec))
   result_mat = matrix(0, nrow = length(Gamma_vec), ncol = 3)
@@ -38,7 +51,7 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
       
       for (sim in 1:sim_num) {
         
-        # read data set generated before
+        # read the dataset generated before
         data_name = paste(c(paste(c("data_plasmode", sim), collapse="_"), "csv"), collapse=".")
         data_path = paste(c(plasmode_dir, data_name), collapse="/")
         V = read.csv(data_path)
@@ -55,11 +68,11 @@ optimal_fraction <- function(data_control, sim_num, effect_ratio, effect_size_lo
       if (!is.null(test_result_dir)) {
         
         # save test results (optional)
-        planning_file_name = paste(c(paste(c("planning", "sensivity", Gamma, "fraction", xi, "method", method), collapse="_"), "csv"), collapse=".")
+        planning_file_name = paste(c(paste(c("planning", "sensitivity", Gamma, "fraction", xi, "method", method), collapse="_"), "csv"), collapse=".")
         planning_file_path = paste(c(test_result_dir, planning_file_name), collapse="/")
         write.csv(planning_result, planning_file_path, row.names = FALSE)
         
-        analysis_file_name = paste(c(paste(c("analysis", "sensivity", Gamma, "fraction", xi, "method", method), collapse="_"), "csv"), collapse=".")
+        analysis_file_name = paste(c(paste(c("analysis", "sensitivity", Gamma, "fraction", xi, "method", method), collapse="_"), "csv"), collapse=".")
         analysis_file_path = paste(c(test_result_dir, analysis_file_name), collapse="/")
         write.csv(analysis_result, analysis_file_path, row.names = FALSE)
         
