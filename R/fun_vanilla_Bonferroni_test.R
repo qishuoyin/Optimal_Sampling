@@ -1,33 +1,7 @@
 # Optimal Sampling
 # Algorithm Functions - Vanilla Bonferroni Method
 
-# Part 1: basis functions
-# Part 1.1: define the sign function
-#' @export
-sgn <- function(x) {
-  if (x>0) {
-    sgn = 1
-  } else if (x==0) {
-    sgn = 1/2
-  } else if (x<0) {
-    sgn = 0
-  }
-  return(sgn)
-}
-
-# Part 1.2: define Wilcoxon's test function
-#' @export
-Wilcoxon_test <- function(vec) {
-  
-  Wilcoxon_t = 0
-  for (n in 1:length(vec)) {
-    Wilcoxon_t = Wilcoxon_t + sgn(vec[n])*rank(abs(vec))[n]
-  }
-  
-  return(Wilcoxon_t)
-}
-
-# Part 2: Bonferroni test functions
+# Bonferroni test functions
 #' @export
 Bonferroni_test <- function(Gamma, V) {
   
