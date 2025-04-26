@@ -1,6 +1,6 @@
 # Optimal Sampling
 # Application - Solve Optimal Split Fraction 
-# (generate 10% outcomes affected in plasmode dataset with effect size to be small: 0.05 - 0.20)
+# (generate 10% outcomes affected in the plasmode dataset with effect size to be small: 0.05 - 0.20)
 
 # set relative path
 current_dir = getwd()
@@ -20,7 +20,7 @@ Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
 xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
 err_tolerant = 0.01
 method = "rank"
-plasmode_dir = paste(c(current_dir, "data_plasmode", "data_plasmode_0_1"), collapse="/")
+plasmode_dir = paste(c(current_dir, "data_plasmode"), collapse="/")
 final_result_dir = paste(c(current_dir, "fraction_results"), collapse="/")
 result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_1_effect_small"), collapse="_"), "csv"), collapse=".")
 
