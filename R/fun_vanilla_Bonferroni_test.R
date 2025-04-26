@@ -3,6 +3,7 @@
 
 # Part 1: basis functions
 # Part 1.1: define the sign function
+#' @export
 sgn <- function(x) {
   if (x>0) {
     sgn = 1
@@ -15,6 +16,7 @@ sgn <- function(x) {
 }
 
 # Part 1.2: define Wilcoxon's test function
+#' @export
 Wilcoxon_test <- function(vec) {
   
   Wilcoxon_t = 0
@@ -26,6 +28,7 @@ Wilcoxon_test <- function(vec) {
 }
 
 # Part 2: Bonferroni test functions
+#' @export
 Bonferroni_test <- function(Gamma, V) {
   
   # arguments:
