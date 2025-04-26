@@ -2,9 +2,9 @@
 # Algorithm Functions - Optimal Fraction
 
 # set relative path
-current_dir = getwd()
-parent_dir = dirname(getwd())
-parent_parent_dir = dirname(parent_dir)
+# current_dir = getwd()
+# parent_dir = dirname(getwd())
+# parent_parent_dir = dirname(parent_dir)
 
 # import necessary sources (needed when writing code locally but not needed in a R package)
 # source(file.path(dirname(sys.frame(1)$ofile), "fun_plasmode_datasets.R"))
