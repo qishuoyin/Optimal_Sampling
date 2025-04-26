@@ -29,7 +29,7 @@ optimal_fraction(data_control, sim_num, effect_ratio, effect_size_lower, effect_
   \item{result_file_name}{file name of the final optimal sample split fraction result - string.}
 }
 \value{
-\code{result_mat}: matrix of the final optimal sample split fraction result.
+  \item{result_mat}{matrix of the final optimal sample split fraction result.}
 }
 \examples{
 \dontrun{
