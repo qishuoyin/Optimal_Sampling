@@ -3,6 +3,7 @@
 
 # Part 1: basis functions
 # Part 1.1: define sign function
+#' @export
 sgn <- function(x) {
   if (x>0) {
     sgn = 1
@@ -15,6 +16,7 @@ sgn <- function(x) {
 }
 
 # Part 1.2: define Wilcoxon's test function
+#' @export
 Wilcoxon_test <- function(vec) {
   
   Wilcoxon_t = 0
@@ -28,6 +30,7 @@ Wilcoxon_test <- function(vec) {
 
 # Part 2: data split
 # split data set into planning sample and analysis sample
+#' @export
 data_split <- function(xi, V) {
   
   # arguments:
@@ -52,6 +55,7 @@ data_split <- function(xi, V) {
 
 # Part 3: test functions
 # Part 3.1: define planning test
+#' @export
 planning_test <- function(Gamma, xi, V_planning, method) {
   
   # arguments:
@@ -112,6 +116,7 @@ planning_test <- function(Gamma, xi, V_planning, method) {
 }
 
 # Part 3.2: define analysis test
+#' @export
 analysis_test <- function(V_analysis, H_order, method) {
   
   # arguments:
@@ -142,6 +147,7 @@ analysis_test <- function(V_analysis, H_order, method) {
 }
 
 # Part 4: detection function (detection whether an outcome has a treatment effect)
+#' @export
 treatment_detection <- function(Gamma, xi, V, method) {
   
   # arguments:
