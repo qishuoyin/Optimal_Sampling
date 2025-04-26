@@ -1,6 +1,7 @@
 # Optimal Sampling
 # Algorithm Functions - Power Evaluation
 
+#' @export
 evaluation <- function(effect_vec, analysis_result) {
   
   # arguments: 
@@ -18,7 +19,7 @@ evaluation <- function(effect_vec, analysis_result) {
 }
 
 
-
+#' @export
 optimal_solution <- function(evaluation_vec, err_tolerant=0.05){
   
   # arguments: 
