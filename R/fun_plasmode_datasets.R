@@ -1,6 +1,7 @@
 # Optimal Sampling
 # Algorithm Functions - Plasmode Datasets
 
+#' @export
 plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_ratio=0.1, effect_size_lower=0.05, effect_size_upper=0.2) {
   
   # arguments: 
