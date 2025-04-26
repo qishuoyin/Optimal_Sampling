@@ -1,2 +1,16 @@
+# Functions you export (so users can call them)
+export(plasmode_datasets)
+export(optimal_fraction)
+export(sgn)
+export(Wilcoxon_test)
+export(data_split)
+export(planning_test)
+export(analysis_test)
+export(treatment_detection)
+export(Bonferroni_test)
+export(evaluation)
+export(optimal_solution)
+
+# Functions you import from base R packages
 importFrom(stats, qnorm, rnorm, runif, sd)
 importFrom(utils, read.csv, write.csv)
