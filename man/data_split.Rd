@@ -13,7 +13,8 @@ data_split(xi, V)
   \item{V}{data set - matrix of dimension (I, K).}
 }
 \value{
-A list containing two elements: \code{V_planning} (planning sample matrix) and \code{V_analysis} (analysis sample matrix).
+  \item{V_planning}{planning sample - matrix of dimension ((1-xi)*I, K)}
+  \item{V_analysis}{analysis sample - matrix of dimension (xi*I, K)}
 }
 \examples{
 # split a dataset into planning and analysis samples
