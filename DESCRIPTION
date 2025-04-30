@@ -1,7 +1,7 @@
 Package: OptimalSampling
 Type: Package
 Title: Optimal Sampling for Observational Studies
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("Qishuo", "Yin", email = "qy1448@princeton.edu", role = c("aut", "cre"))
 Description: Implements optimal sampling strategies for observational causal inference.
 License: MIT
