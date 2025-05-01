@@ -12,7 +12,7 @@ current_dir = getwd()
 parent_dir = dirname(getwd())
 
 # Load dataset
-data_full_cleaned <- read.csv(paste(c(current_dir, "data_full_cleaned.csv"), collapse="/"))
+data_full_cleaned <- read.csv(paste(c(parent_dir, "data_full_cleaned.csv"), collapse="/"))
 
 # Select relevant columns: keep only "Poverty", "Family Size", "Age", "Room Number", and Treatment
 covariates <- c("INDFMPIR", "DMDHHSIZ", "RIDAGEYR", "HOD050", "TREAT")
