@@ -12,7 +12,8 @@ This directory contains experiments evaluating the performance of various optima
 
 ## Subdirectories
 
-📁 `data_generate_script/`:  
+📁 `data_generate_script/`: 
+
 Contains scripts for simulating synthetic datasets with structured treatment effects.
 
 - `data_generate.R`: Main function to simulate synthetic the ground truth treatment/control dataset.
