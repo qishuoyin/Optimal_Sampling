@@ -20,6 +20,7 @@ This directory contains experiments evaluating the performance of various optima
 ## Notes
 
 - All `.R` scripts assume the working directory is at the top level of the project.
+- Generated datasets are saved to `data/` folders for simulation studies to access.
 - Simulation results are saved to `output/` folders organized by method and parameters.
 - Use scripts from the `scripts/` folder to automate large-scale simulation or plotting tasks in HPC environments.
 
