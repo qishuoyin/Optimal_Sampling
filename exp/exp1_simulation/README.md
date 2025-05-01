@@ -12,6 +12,7 @@ This directory contains experiments evaluating the performance of various optima
 
 ## Subdirectories
 📁 `data_generate_script/`: Contains R scripts for simulating synthetic datasets with structured treatment effects.
+
 📁 `visualization/`: Contains scripts to create performance visualizations (e.g., power curves) from simulation results.
 
 
