@@ -12,16 +12,13 @@ This directory contains experiments evaluating the performance of various optima
 
 ## Subdirectories
 
-### 📁 `data_generate_script/`
-**Purpose**:  
+### 📁 `data_generate_script/`:  
 Contains scripts for simulating synthetic datasets with structured treatment effects.
 
-- `data_generate.R`: Main function to simulate synthetic treatment/control datasets.
-- `data_match_pair.R` / `data_match_pair_parallel.R`: Generate matched-pair datasets for simulation.
-- `data_sample_simulation.R`: Simulates observed outcomes under a treatment-control structure.
-- `*_example.R` and `*_parallel.R`: Variants for demonstration and parallel execution.
+- `data_generate.R`: Main function to simulate synthetic the ground truth treatment/control dataset.
+- `data_match_pair.R` / `data_match_pair_parallel.R`: Conduct pull matching on the synthetic dataset to get matched-pair dataset. (parallel version offers an approach to submit job array)
+- `data_sample_simulation.R` / `data_sample_simulation_parallel.R` / `data_sample_simulation_example.R`: Synthetic datasets to conduct simulations by random sampling.
 
----
 
 ### 📁 `visualization/`
 **Purpose**:  
