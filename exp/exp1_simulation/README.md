@@ -11,20 +11,11 @@ This directory contains experiments evaluating the performance of various optima
 
 
 ## Subdirectories
-📁 `data_generate_script/`: Contains R scripts for simulating synthetic datasets with structured treatment effects.
+📁 `data_generate_script/`: Stores (`.R`) scripts for simulating synthetic datasets with structured treatment effects.
 
-📁 `visualization/`: Contains scripts to create performance visualizations (e.g., power curves) from simulation results.
+📁 `visualization/`: Stores (`.R`) scripts to create performance visualizations (e.g., power curves) from simulation results.
 
-
-### 📁 `scripts/`
-**Purpose**:  
-Stores shell scripts (`.sh`) designed for HPC job submission, especially for Slurm-based clusters. These scripts allow for parallel or array-based execution of simulation and plotting jobs.
-
-Examples:
-- `*_array.sh`: Submits a job array for multiple simulations.
-- `*_plot_example.sh`: Runs plotting scripts on cluster nodes.
-
----
+📁 `scripts/`: Stores shell scripts (`.sh`) designed for HPC job submission, especially for Slurm-based clusters. These scripts allow for parallel or array-based execution of simulation and plotting jobs.
 
 ## Notes
 
