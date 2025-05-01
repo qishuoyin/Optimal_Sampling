@@ -18,7 +18,6 @@ This directory contains experiments applying the proposed optimal sampling strat
 
 - `final_results.csv`: Contains the results from the real data analysis, including test outcomes and power estimates for both proposed and baseline methods.
 
----
 
 ## Subdirectories
 
@@ -30,7 +29,6 @@ Stores visualization scripts and output plots for result inspection and covariat
 📁 `scripts/`:  
 (If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. These scripts parallel the structure in `exp1_simulation/scripts/`.
 
----
 
 ## Notes
 
