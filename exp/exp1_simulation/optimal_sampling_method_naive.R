@@ -25,8 +25,8 @@ xi_vec = seq(from = 0.01, to = 0.99, by = 0.01) # analysis sample fraction
 method = "naive"
 
 
-test_result_dir = paste(c(current_dir, "test_results"), collapse="/")
-final_result_dir = paste(c(current_dir, "evaluation_result"), collapse="/")
+test_result_dir = paste(c(current_dir, "output/output_test"), collapse="/")
+final_result_dir = paste(c(current_dir, "output/output_evaluation"), collapse="/")
 
 
 for(i1 in 1:length(K_vec)) {
@@ -62,7 +62,7 @@ for(i1 in 1:length(K_vec)) {
           # read data set generated before
           sim_info = paste(c("data", "simulation_diff", "outcome", K, "Gamma", Gamma, "I", I, "test_sim", t), collapse="_")
           data_name = paste(c(sim_info, "csv"), collapse=".")
-          data_path = paste(c(paste(c(current_dir, "data_simulation"), collapse="/"), data_name), collapse="/")
+          data_path = paste(c(paste(c(current_dir, "data/data_simulation"), collapse="/"), data_name), collapse="/")
           V = read.csv(data_path)
           
           test_result = treatment_detection(Gamma, xi, V, method)
