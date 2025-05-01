@@ -8,7 +8,7 @@ parent_dir = dirname(getwd())
 parent_parent_dir = dirname(parent_dir)
 
 # import necessary sources
-fun_dir = paste(c(parent_parent_dir, "fun"), collapse="/")
+fun_dir = paste(c(parent_parent_dir, "R"), collapse="/")
 source(paste(c(fun_dir, "fun_optimal_fraction.R"), collapse="/"))
 
 # set parameters
@@ -20,7 +20,7 @@ Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # different design sensitivity Gamma
 xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample fraction
 err_tolerant = 0.01
 method = "rank"
-plasmode_dir = paste(c(current_dir, "data_plasmode"), collapse="/")
+plasmode_dir = paste(c(current_dir, "data/data_plasmode"), collapse="/")
 final_result_dir = paste(c(current_dir, "fraction_results"), collapse="/")
 result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_1_effect_small"), collapse="_"), "csv"), collapse=".")
 
