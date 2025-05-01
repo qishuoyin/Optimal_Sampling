@@ -10,7 +10,7 @@ parent_parent_dir = dirname(parent_dir)
 set.seed(2024)
 
 # import necessary sources
-fun_dir = paste(c(parent_parent_dir, "fun"), collapse="/")
+fun_dir = paste(c(parent_parent_dir, "R"), collapse="/")
 source(paste(c(fun_dir, "fun_vanilla_Bonferroni_test.R"), collapse="/"))
 
 
