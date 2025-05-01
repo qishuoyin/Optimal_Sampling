@@ -10,7 +10,7 @@ parent_parent_dir = dirname(parent_dir)
 set.seed(2024) 
 
 # import necessary sources
-fun_dir = paste(c(parent_parent_dir, "fun"), collapse="/")
+fun_dir = paste(c(parent_parent_dir, "R"), collapse="/")
 source(paste(c(fun_dir, "fun_plasmode_datasets.R"), collapse="/"))
 source(paste(c(fun_dir, "fun_two_stage_tests.R"), collapse="/"))
 source(paste(c(fun_dir, "fun_power_evaluation.R"), collapse="/"))
