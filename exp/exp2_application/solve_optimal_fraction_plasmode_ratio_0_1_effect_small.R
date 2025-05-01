@@ -21,7 +21,7 @@ xi_vec = seq(from = 0.02, to = 0.98, by = 0.02) # different analysis sample frac
 err_tolerant = 0.01
 method = "rank"
 plasmode_dir = paste(c(current_dir, "data/data_plasmode"), collapse="/")
-final_result_dir = paste(c(current_dir, "fraction_results"), collapse="/")
+final_result_dir = paste(c(current_dir, "output"), collapse="/")
 result_file_name = paste(c(paste(c("final_result", "method", method, "plasmode_ratio_0_1_effect_small"), collapse="_"), "csv"), collapse=".")
 
 # solve optimal sample split fraction
