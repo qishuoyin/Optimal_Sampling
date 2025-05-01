@@ -2,7 +2,6 @@
 
 This directory contains experiments evaluating the performance of various optimal sampling strategies under synthetic high-dimensional data. The experiments compare the proposed **Optimal Sample Split Selection Tests** and **Optimal Sample Split Rank Tests** with the baseline methods, **Naive (Traditional) Sample Split Test** and **Bonferroni Correction**. 
 
----
 
 ## Main Simulation Scripts
 - `optimal_sampling_method_naive.R`: Implements a naive version of the optimal sampling strategy that performs hypothesis testing with only one outcome selected among the planning sample.
@@ -10,7 +9,6 @@ This directory contains experiments evaluating the performance of various optima
 - `optimal_sampling_method_rank.R`: Implements the "ranking-based" optimal sample split method. Hypotheses are ranked using statistics from the planning sample, and the analysis sample is used to evaluate those ranks.
 - `vanilla_method_Bonferroni.R`: Implements a baseline Bonferroni correction method for multiple testing. Serves as a reference for evaluating the power and sensitivity of proposed methods.
 
----
 
 ## Subdirectories
 
