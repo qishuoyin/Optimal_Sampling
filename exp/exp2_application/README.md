@@ -10,22 +10,34 @@ This directory contains experiments applying the proposed optimal sampling strat
 
 - `application_final_test_vanilla_Bonferroni.R`: Applies the standard Bonferroni correction method to the same dataset, serving as a benchmark for comparison.
 
-- `solve_optimal_fraction_plasmode_ratio_0_1_effectsize_0_2_gamma_1.25.R`: Solves for the numerically optimal planning fraction using a plasmode design and specified effect size and sensitivity parameters. This script supports sample split tuning and optimization for the main application.
+- `solve_optimal_fraction_plasmode_ratio_0_1_effectsize_0_2_gamma_1.25.R`: Solves for the numerically optimal planning fraction using a plasmode design and specified effect size and sensitivity parameters. This supports tuning for sample splitting decisions.
 
 ---
 
 ## Input/Output Data
 
-- `data_full_cleaned.csv`: The cleaned dataset used in the application study. This file contains observed outcomes, treatment indicators, and potential covariates structured for downstream hypothesis testing.
+- `data_full_cleaned.csv`: The cleaned dataset used in the application study. This includes outcomes, treatment indicators, and other covariates.
 
-- `final_results.csv`: Contains the results from the real data analysis, including test decisions and power estimates from both proposed and baseline methods.
+- `final_results.csv`: Contains the results from the real data analysis, including test outcomes and power estimates for both proposed and baseline methods.
+
+---
+
+## Subdirectories
+
+📁 `visualization/`:  
+Stores visualization scripts and output plots for result inspection and covariate balance checks.
+- `application_covariates_plots.R`: Generates diagnostic plots for covariates across treatment groups.
+- `pretreatment_covariates_boxplot.png`: Sample output illustrating covariate distributions pre-treatment.
+
+📁 `scripts/`:  
+(If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. These scripts parallel the structure in `exp1_simulation/scripts/`.
 
 ---
 
 ## Notes
 
 - All `.R` scripts assume the working directory is at the top level of the project.
-- Before running the application scripts, ensure necessary helper functions are accessible (e.g., from the `R/` folder).
-- The planning fractions and design sensitivity levels can be modified in each script to explore robustness.
+- Results are written to structured output folders for downstream visualization and analysis.
+- Helper functions (e.g., for power evaluation or matrix operations) are expected to be loaded from the shared `R/` directory.
 
-This directory complements the simulation studies by validating the proposed methods on actual data with potentially unmeasured confounding.
+This directory complements the simulation studies in `exp1_simulation/` by validating the proposed sample split methods on real observational data.
