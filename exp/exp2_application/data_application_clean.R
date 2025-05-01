@@ -8,7 +8,7 @@ library(dplyr)  # For data manipulation
 
 # Set relative path
 current_dir <- getwd()
-nhanes_dir <- paste(c(current_dir, "data_raw"), collapse="/")
+nhanes_dir <- paste(c(current_dir, "data/data_raw"), collapse="/")
 
 # List of dataset names (without file extensions)
 dataset_names <- c(
@@ -109,8 +109,6 @@ data_pretreat <- data_complete %>%
 
 # Print final cleaned dataset summary
 print("Pretreatment data cleaning complete. Summary:")
-# print(summary(data_pretreat))
-
 
 
 # treatment data
