@@ -1,6 +1,6 @@
-# Experiment 1: Synthetic Simulation Studies
+# Experiment 1: Simulation Studies
 
-This directory contains experiments evaluating the performance of various optimal sampling strategies under synthetic high-dimensional data. The experiments compare multiple hypothesis testing methods using sample splitting, outcome ranking, and data-driven selection.
+This directory contains experiments evaluating the performance of various optimal sampling strategies under synthetic high-dimensional data. The experiments compare the proposed *Optimal Sample Split Selection Tests* and *Optimal Sample Split Rank Tests* with the baseline methods, *Naive (Traditional) Sample Split Test* and *Bonferroni Correction*. 
 
 ---
 
