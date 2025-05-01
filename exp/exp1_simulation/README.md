@@ -11,25 +11,9 @@ This directory contains experiments evaluating the performance of various optima
 
 
 ## Subdirectories
+📁 `data_generate_script/`: Contains R scripts for simulating synthetic datasets with structured treatment effects.
+📁 `visualization/`: Contains scripts to create performance visualizations (e.g., power curves) from simulation results.
 
-📁 `data_generate_script/`: 
-
-Contains scripts for simulating synthetic datasets with structured treatment effects.
-
-- `data_generate.R`: Main function to simulate synthetic the ground truth treatment/control dataset.
-- `data_match_pair.R` / `data_match_pair_parallel.R`: Conduct pull matching on the synthetic dataset to get matched-pair dataset. (parallel version offers an approach to submit job array)
-- `data_sample_simulation.R` / `data_sample_simulation_parallel.R` / `data_sample_simulation_example.R`: Synthetic datasets to conduct simulations by random sampling.
-
-
-### 📁 `visualization/`
-**Purpose**:  
-Provides scripts to create performance visualizations (e.g., power curves) from simulation results.
-
-- `example_power_plot.R`: Plots power curves from saved results.
-- `optimal_sampling_method_select_plot_example.R`: Visualizes selection method outcomes.
-- Output PDFs or images are saved for inclusion in reports or papers.
-
----
 
 ### 📁 `scripts/`
 **Purpose**:  
