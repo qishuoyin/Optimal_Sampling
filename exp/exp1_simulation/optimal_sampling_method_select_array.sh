@@ -6,8 +6,8 @@
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G is default)
-#SBATCH --time=144:00:00          # total run time limit (HH:MM:SS)
-#SBATCH --array=1-16              # job array with index values
+#SBATCH --time=144:00:00         # total run time limit (HH:MM:SS)
+#SBATCH --array=1-16             # job array with index values
 #SBATCH --mail-type=all          # send email on job start, end and fault
 #SBATCH --mail-user=qy1448@princeton.edu
 
@@ -23,7 +23,7 @@ param1=$(echo $line | awk '{print $1}')
 param2=$(echo $line | awk '{print $2}')
 
 # Run the R script with the four parameters
-Rscript optimal_sampling_method_select_array.R $param1 $param2 
+Rscript ../optimal_sampling_method_select_array.R $param1 $param2 
 
 
 
