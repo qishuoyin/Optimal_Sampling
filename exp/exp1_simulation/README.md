@@ -23,5 +23,7 @@ This directory contains experiments evaluating the performance of various optima
 - Generated datasets are saved to `data/` folders for simulation studies to access.
 - Simulation results are saved to `output/` folders organized by method and parameters.
 - Use scripts from the `scripts/` folder to automate large-scale simulation or plotting tasks in HPC environments.
+- Helper functions (e.g., for power evaluation or matrix operations) are expected to be loaded from the shared `R/` directory.
+
 
 This structure is intended to separate core logic (`.R` scripts), HPC batch utilities (`scripts/`), data generation (`data_generate_script/`), and post-processing (`visualization/`).
