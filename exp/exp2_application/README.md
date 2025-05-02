@@ -22,12 +22,10 @@ This directory contains experiments applying the proposed optimal sampling strat
 ## Subdirectories
 
 📁 `visualization/`:  
-Stores visualization scripts and output plots for result inspection and covariate balance checks.
-- `application_covariates_plots.R`: Generates diagnostic plots for covariates across treatment groups.
-- `pretreatment_covariates_boxplot.png`: Sample output illustrating covariate distributions pre-treatment.
+Stores visualization scripts and output plots for the covariate balance plot.
 
 📁 `scripts/`:  
-(If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. These scripts parallel the structure in `exp1_simulation/scripts/`.
+(If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. 
 
 
 ## Notes
@@ -37,3 +35,4 @@ Stores visualization scripts and output plots for result inspection and covariat
 - Helper functions (e.g., for power evaluation or matrix operations) are expected to be loaded from the shared `R/` directory.
 
 This directory complements the simulation studies in `exp1_simulation/` by validating the proposed sample split methods on real observational data.
+
