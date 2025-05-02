@@ -23,7 +23,7 @@ param1=$(echo $line | awk '{print $1}')
 param2=$(echo $line | awk '{print $2}')
 
 # Run the R script with the four parameters
-Rscript optimal_sampling_method_naive_array.R $param1 $param2 
+Rscript ../optimal_sampling_method_naive_array.R $param1 $param2 
 
 
 
