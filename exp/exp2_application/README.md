@@ -24,7 +24,7 @@ This directory contains experiments applying the proposed optimal sampling strat
 📁 `visualization/`:  
 Stores visualization scripts and output plots for the covariate balance plot.
 
-📁 `scripts/`:  
+📁 `script/`:  
 (If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. 
 
 
