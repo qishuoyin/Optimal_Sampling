@@ -15,14 +15,14 @@ This directory contains experiments evaluating the performance of various optima
 
 📁 `visualization/`: Stores (`.R`) scripts to create performance visualizations (e.g., power curves) from simulation results.
 
-📁 `scripts/`: Stores shell scripts (`.sh`) designed for HPC job submission, especially for Slurm-based clusters. These scripts allow for parallel or array-based execution of simulation and plotting jobs.
+📁 `script/`: Stores shell scripts (`.sh`) designed for HPC job submission, especially for Slurm-based clusters. These scripts allow for parallel or array-based execution of simulation and plotting jobs.
 
 ## Notes
 
 - All `.R` scripts assume the working directory is at the top level of the project.
 - Generated datasets are saved to `data/` folders for simulation studies to access.
 - Simulation results are saved to `output/` folders organized by method and parameters.
-- Use scripts from the `scripts/` folder to automate large-scale simulation or plotting tasks in HPC environments.
+- Use scripts from the `script/` folder to automate large-scale simulation or plotting tasks in HPC environments.
 - Helper functions (e.g., for power evaluation or matrix operations) are expected to be loaded from the shared `R/` directory.
 
 
