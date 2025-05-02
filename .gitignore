@@ -6,7 +6,9 @@ exp/exp1_simulation/data_generate_script/logs
 exp/exp1_simulation/logs
 exp/exp1_simulation/data
 exp/exp1_simulation/output
+exp/exp1_simulation/script
 
 exp/exp2_application/logs
 exp/exp2_application/data
 exp/exp2_application/output
+exp/exp2_application/script
