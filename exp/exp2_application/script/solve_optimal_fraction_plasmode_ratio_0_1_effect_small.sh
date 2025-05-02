@@ -10,10 +10,10 @@
 #SBATCH --mail-type=begin                                                      # send email when process begins
 #SBATCH --mail-type=fail                                                       # send email if job fails
 #SBATCH --mail-type=end                                                        # send email when job ends
-#SBATCH --mail-user=qy1448@princeton.edu
+#SBATCH --mail-user=<YourEmail>
 
 module purge
 module load anaconda3/2024.2
 conda activate optimal_sampling_env
 
-Rscript solve_optimal_fraction_plasmode_ratio_0_1_effect_small.R
+Rscript ../solve_optimal_fraction_plasmode_ratio_0_1_effect_small.R
