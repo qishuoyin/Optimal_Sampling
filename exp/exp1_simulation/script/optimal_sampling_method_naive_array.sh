@@ -9,7 +9,7 @@
 #SBATCH --time=144:00:00          # total run time limit (HH:MM:SS)
 #SBATCH --array=1-16              # job array with index values
 #SBATCH --mail-type=all          # send email on job start, end and fault
-#SBATCH --mail-user=qy1448@princeton.edu
+#SBATCH --mail-user=<YourEmail>
 
 module purge
 module load anaconda3/2024.2
