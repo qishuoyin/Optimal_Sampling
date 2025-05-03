@@ -63,7 +63,9 @@ The experiments conducted by this package are located in the `exp` folder. They 
 
 ```R
 
+
 library(OptimalSampling)
+
 # Step 0: Load your dataset on outcomes for control
 data_control = read.csv("Your_data_control_path")
 
