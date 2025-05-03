@@ -1,5 +1,21 @@
 .DS_Store
 .env
+# Ignore compiled or installed-only artifacts
+Meta/
+help/
+html/
+.Rhistory
+.RData
+.Rproj.user/
+.Rbuildignore
+*.rdb
+*.rdx
+*.so
+*.o
+*.dll
+.Rcheck/
+*.tar.gz
+
 
 exp/exp1_simulation/data_generate_script/logs
 
