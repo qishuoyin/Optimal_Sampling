@@ -25,7 +25,7 @@ row2_df <- data.frame(SplitFraction = seq_along(row2), TestPower = row2)
 # Create the plot
 p <- ggplot(row2_df, aes(x = SplitFraction, y = TestPower)) +
   geom_line(color = "blue", size = 1) +  # Line plot
-  geom_point(color = "red", size = 2) +  # Points for clarity
+  # geom_point(color = "red", size = 2) +  # Points for clarity
   theme_classic() +  # Removes grey background
   labs(x = "Split fraction （%）", y = "Test power")  # No title
 
