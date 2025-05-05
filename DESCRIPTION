@@ -7,3 +7,4 @@ Description: Implements optimal sampling strategies for observational causal inf
 License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
