@@ -28,7 +28,7 @@ The package allows practitioners to:
 To install the development version from GitHub:
 
 ```R
-# install.packages("devtools")
+# install.packages("devtools") # only uncomment this line if you never install "devtools" before
 library(devtools)
 devtools::install_github("qishuoyin/Optimal_Sampling")
 ```
