@@ -7,7 +7,6 @@ library(foreach)
 
 # set the number of cores to use
 num_cores <- as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))
-# num_cores <- 2
 
 # initialize a parallel backend
 cl <- makeCluster(num_cores)
