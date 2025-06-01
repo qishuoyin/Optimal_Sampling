@@ -2,7 +2,12 @@
 # Algorithm Functions - Plasmode Datasets
 
 #' @export
-plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_ratio=0.1, effect_size_lower=0.05, effect_size_upper=0.2) {
+plasmode_datasets <- function(data_control, 
+                              output_dir, 
+                              sim_num=1000, 
+                              effect_ratio=0.1, 
+                              effect_size_lower=0.05, 
+                              effect_size_upper=0.2) {
   
   # arguments: 
   # data_control: dataset of outcomes for control - the plasmode datasets are generated based on this dataset
@@ -29,7 +34,9 @@ plasmode_datasets <- function(data_control, output_dir, sim_num=1000, effect_rat
     
     for(i in col_indices) {
       if(i %in% treat_indices) {
-        effect[, i] = runif(nrow(data_control), effect_size_lower*treat_sd[which(treat_indices == i)], effect_size_upper*treat_sd[which(treat_indices == i)])
+        effect[, i] = runif(nrow(data_control), 
+                            effect_size_lower*treat_sd[which(treat_indices == i)], 
+                            effect_size_upper*treat_sd[which(treat_indices == i)])
       } else if (i %in% control_indices) {
         effect[, i] = rnorm(nrow(data_control))
       }
