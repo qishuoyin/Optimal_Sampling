@@ -22,7 +22,7 @@ data_matched_pair <- function(X, Z, Y) {
   # return: 
   # data_pair_diff: dataset of outcomes into matched pairs
   
-  # match dataset in pairs
+  # match the dataset in pairs
   data_full_match = data.frame(cbind(X, Z))
   data_full_outcomes = Y
   # full matching on pretreatment variables
@@ -73,12 +73,14 @@ data_matched_pair <- function(X, Z, Y) {
   colnames(data_pair_control) = colnames(Y)
   colnames(data_pair_treat) = colnames(Y)
   
-  return_list = list(data_pair_diff = data_pair_diff, data_pair_control = data_pair_control, data_pair_treat = data_pair_treat)
+  return_list = list(data_pair_diff = data_pair_diff, 
+                     data_pair_control = data_pair_control, 
+                     data_pair_treat = data_pair_treat)
   return(return_list)
   
 }
 
-# match dataset into pairs
+# match the dataset into pairs
 D = 5 # number of covariates
 K_vec = c(10, 100, 500, 1000) # number of outcomes
 Gamma_vec = c(1, 1.25, 1.5, 1.75, 2) # design sensitivity
@@ -92,7 +94,8 @@ for(i1 in 1:length(K_vec)) {
     Gamma = Gamma_vec[i2]
     
     # read data
-    data_name = paste(c(paste(c("data", "whole", "outcome", K, "Gamma", Gamma), collapse="_"), "csv"), collapse=".")
+    data_name = paste(c(paste(c("data", "whole", "outcome", K, "Gamma", Gamma), 
+                              collapse="_"), "csv"), collapse=".")
     data_path = paste(c(paste(c(parent_dir, "data_whole"), collapse="/"), data_name), collapse="/")
     data_generate_full = read.csv(data_path) 
     
@@ -124,7 +127,7 @@ for(i1 in 1:length(K_vec)) {
     Y_t = data_generate_full[, Y_t_name_list]
     Y = data_generate_full[, Y_name_list]
     
-    # match dataset into pairs by function
+    # match the dataset into pairs by function
     data_pair_diff = data_matched_pair(X, Z, Y)$data_pair_diff
     data_pair_control = data_matched_pair(X, Z, Y)$data_pair_control
     data_pair_treat = data_matched_pair(X, Z, Y)$data_pair_treat
