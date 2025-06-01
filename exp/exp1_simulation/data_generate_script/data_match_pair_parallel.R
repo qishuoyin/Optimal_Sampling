@@ -84,7 +84,9 @@ data_matched_pair <- function(X, Z, Y) {
   colnames(data_pair_control) = colnames(Y)
   colnames(data_pair_treat) = colnames(Y)
   
-  return_list = list(data_pair_diff = data_pair_diff, data_pair_control = data_pair_control, data_pair_treat = data_pair_treat)
+  return_list = list(data_pair_diff = data_pair_diff, 
+                     data_pair_control = data_pair_control, 
+                     data_pair_treat = data_pair_treat)
   return(return_list)
   
 }
@@ -103,7 +105,8 @@ for(i1 in 1:length(K_vec)) {
     Gamma = Gamma_vec[i2]
     
     # read data
-    data_name = paste(c(paste(c("data", "whole", "outcome", K, "Gamma", Gamma), collapse="_"), "csv"), collapse=".")
+    data_name = paste(c(paste(c("data", "whole", "outcome", K, "Gamma", Gamma), 
+                              collapse="_"), "csv"), collapse=".")
     data_path = paste(c(paste(c(parent_dir, "data_whole"), collapse="/"), data_name), collapse="/")
     data_generate_full = read.csv(data_path) 
     
