@@ -11,8 +11,11 @@ parent_dir = dirname(getwd())
 # set seeds
 set.seed(2024) 
 
-# data generating function
-data_generate <- function(N, K, D, Gamma, eta, alpha_mean, alpha_sd, epsilon_mean, epsilon_sd, tau_mean, tau_sd) {
+# data-generating function
+data_generate <- function(N, K, D, Gamma, eta, 
+                          alpha_mean, alpha_sd, 
+                          epsilon_mean, epsilon_sd, 
+                          tau_mean, tau_sd) {
   
   # arguments:
   # N: number of units - number
@@ -39,9 +42,9 @@ data_generate <- function(N, K, D, Gamma, eta, alpha_mean, alpha_sd, epsilon_mea
   # X: covariates - shape: I*D
   # U: confounders - shape: I*1
   # Z: treatment assignment
-  # Y: outcome observed (depend on Z = 0 or 1)
+  # Y: outcome observed (depends on Z = 0 or 1)
   
-  # data generating model parameters
+  # data-generating model parameters
   Kt = round(eta*K) # number of outcomes affected by the treatment
   alpha = matrix(rnorm(n = D*K, mean = alpha_mean, sd = alpha_sd), nrow = D, ncol = K) # alpha: parameter in linear outcome model - D*K matrix
   epsilon = matrix(rnorm(n = N*K, mean = epsilon_mean, sd = epsilon_sd), nrow = N, ncol = K) # epsilon: noise in linear outcome model - I*K matrix
@@ -116,7 +119,10 @@ for (K in K_vec) {
   
   for (Gamma in Gamma_vec) {
     
-    data_generate_list = data_generate(N, K, D, Gamma, eta, alpha_mean, alpha_sd, epsilon_mean, epsilon_sd, tau_mean, tau_sd)
+    data_generate_list = data_generate(N, K, D, Gamma, eta, 
+                                       alpha_mean, alpha_sd, 
+                                       epsilon_mean, epsilon_sd, 
+                                       tau_mean, tau_sd)
     Z = data_generate_list$Z
     X = data_generate_list$X
     U = data_generate_list$U
