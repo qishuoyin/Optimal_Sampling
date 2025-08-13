@@ -5,7 +5,7 @@ This directory contains experiments applying the proposed optimal sampling strat
 
 ## Main Application Scripts
 
-- `solve_optimal_fraction_plasmode_ratio_0_1_effectsize_0_2_gamma_1.25.R`: Solves for the optimal planning fraction numerically using a plasmode design and specified effect size and sensitivity parameters.
+- `solve_optimal_fraction.R`: Solves for the optimal planning fraction numerically using a plasmode design and specified effect size and sensitivity parameters.
   
 - `application_final_test_optimal_sampling.R`: Applies the optimal sample split method (rank-based) on the cleaned real dataset. This script computes test statistics and evaluates results under realistic design sensitivity scenarios.
 
