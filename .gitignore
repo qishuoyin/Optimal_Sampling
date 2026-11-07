@@ -7,24 +7,30 @@ html/
 .Rhistory
 .RData
 .Rproj.user/
-.Rbuildignore
 *.rdb
 *.rdx
 *.so
 *.o
 *.dll
-.Rcheck/
+*.Rcheck/
 *.tar.gz
 
-
-exp/exp1_simulation/data_generate_script/logs
 
 exp/exp1_simulation/logs
 exp/exp1_simulation/data
 exp/exp1_simulation/output
-exp/exp1_simulation/script
+exp/exp1_simulation/results
 
 exp/exp2_application/logs
 exp/exp2_application/data
 exp/exp2_application/output
-exp/exp2_application/script
+exp/exp2_application/results
+
+exp/exp3_sensitivity/logs
+exp/exp3_sensitivity/output
+exp/exp3_sensitivity/results
+exp/exp3_sensitivity/manifest.csv
+
+# Local paper and reviewer-response materials are not part of the code repository.
+/paper/
+/revision/

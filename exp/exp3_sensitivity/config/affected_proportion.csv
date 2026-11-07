@@ -1,0 +1,12 @@
+I,K,Gamma_values,M,eta_true,eta_work,effect_id
+200,500,1;1.5;2,250,0.05,0.05,uniform_small_scaled
+200,500,1;1.5;2,250,0.10,0.10,uniform_small_scaled
+200,500,1;1.5;2,250,0.20,0.20,uniform_small_scaled
+200,500,1;1.5;2,250,0.30,0.30,uniform_small_scaled
+200,500,1;1.5;2,250,0.05,0.10,uniform_small_scaled
+200,500,1;1.5;2,250,0.20,0.10,uniform_small_scaled
+200,500,1;1.5;2,250,0.30,0.10,uniform_small_scaled
+200,500,1;1.5;2,250,0.10,0.05,uniform_small_scaled
+200,500,1;1.5;2,250,0.10,0.075,uniform_small_scaled
+200,500,1;1.5;2,250,0.10,0.20,uniform_small_scaled
+200,500,1;1.5;2,250,0.10,0.30,uniform_small_scaled

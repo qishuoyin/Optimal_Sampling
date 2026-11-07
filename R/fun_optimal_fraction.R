@@ -96,7 +96,7 @@ optimal_fraction <- function(data_control,
     
     # compute the optimal fraction results set
     evaluation_vec = power_mat[which(Gamma_vec == Gamma), ]
-    optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant)
+    optimal_fraction_set = optimal_solution(evaluation_vec, err_tolerant, xi_vec)
     max_power = optimal_fraction_set$max_power
     fraction_lower = optimal_fraction_set$fraction_lower
     fraction_upper = optimal_fraction_set$fraction_upper

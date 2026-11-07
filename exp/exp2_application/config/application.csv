@@ -1,0 +1,10 @@
+parameter,value
+matched_pairs,153
+outcomes,76
+Gamma,1;1.25;1.5;1.75;2
+method,rank
+analysis_fraction,0.90
+plasmodes,1000
+eta_work,0.10
+effect_id,uniform_small_scaled
+seed,2024

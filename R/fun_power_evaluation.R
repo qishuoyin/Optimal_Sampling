@@ -20,18 +20,28 @@ evaluation <- function(effect_vec, analysis_result) {
 
 
 #' @export
-optimal_solution <- function(evaluation_vec, err_tolerant=0.05){
+optimal_solution <- function(evaluation_vec, err_tolerant=0.05, xi_vec=NULL){
   
   # arguments: 
   # evaluation_vec: vector of test power at each split fraction - vector of dimension number of possible split fractions
   # err_tolerant: max error that could be tolerated for maximum power in split fraction selection (default: 0.05)
   
+  # xi_vec: evaluated analysis fractions; retained as an optional argument for
+  # backward compatibility with the original scripts that defined it globally
+
   # return: 
   # max_power: maximum power among various split fractions - float in (0, 1)
   # fraction_lower: lower bound of optimal split fractions - float in (0, 1)
   # fraction_upper: upper bound of optimal split fractions - float in (0, 1)
 
   
+  if (is.null(xi_vec)) {
+    xi_vec = get("xi_vec", envir = parent.frame(), inherits = TRUE)
+  }
+  if (length(xi_vec) != length(evaluation_vec)) {
+    stop("xi_vec and evaluation_vec must have the same length")
+  }
+
   # search for max power and its interval
   max_power = max(evaluation_vec) 
   idx_interval = which(evaluation_vec >= (1 - err_tolerant)*max_power)

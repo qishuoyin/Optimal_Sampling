@@ -1,0 +1,9 @@
+I,K,Gamma_values,M,eta_true,eta_work,effect_id
+200,100,1;1.5;2,250,0.10,0.10,truncnorm_small_scaled
+200,100,1;1.5;2,250,0.10,0.10,constant_small_scaled
+200,100,1;1.5;2,250,0.10,0.10,uniform_moderate_scaled
+200,100,1;1.5;2,250,0.10,0.10,constant_small_unscaled
+200,1000,1;1.5;2,250,0.10,0.10,truncnorm_small_scaled
+200,1000,1;1.5;2,250,0.10,0.10,constant_small_scaled
+200,1000,1;1.5;2,250,0.10,0.10,uniform_moderate_scaled
+200,1000,1;1.5;2,250,0.10,0.10,constant_small_unscaled

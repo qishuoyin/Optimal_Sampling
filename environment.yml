@@ -1,0 +1,24 @@
+# Conda environment for the OptimalSampling repository.
+# Recreates the environment used by the package-driven experiment runners.
+#
+# Create it with:
+#     module load anaconda3/2024.2          # or your local conda
+#     conda env create -f environment.yml
+#     conda activate optimal_sampling_env
+#     Rscript install_packages.R            # finishes any CRAN-only packages (e.g. simDAG)
+#
+# Experiment 3 uses simDAG for new eta_true settings and MatchIt/optmatch for full matching.
+
+name: optimal_sampling_env
+channels:
+  - conda-forge
+dependencies:
+  - r-base>=4.2
+  # data generation and matching
+  - r-matchit          # full matching
+  - r-optmatch         # backend required by MatchIt method = "full"
+  # paper figures
+  - r-ggplot2
+  - r-reshape2
+  # NOTE: simDAG is not reliably on conda-forge;
+  #       install it from CRAN via `Rscript install_packages.R` after creating this env.

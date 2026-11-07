@@ -12,7 +12,6 @@ planning_test(Gamma, xi, V_planning, method)
   \item{Gamma}{design sensitivity - float >= 1.}
   \item{xi}{fraction of analysis sample - float within (0, 1).}
   \item{V_planning}{planning sample - matrix of dimension ((1-xi)*I, K).}
-  \item{K}{number of outcomes - int.}
   \item{method}{"naive", "select", "rank" - string.}
 }
 \value{
