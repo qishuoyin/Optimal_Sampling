@@ -1,0 +1,8 @@
+^\.git$
+^\.gitignore$
+^\.Rbuildignore$
+^.*\.Rcheck$
+^environment\.yml$
+^install_packages\.R$
+^exp$
+^revision$

@@ -1,0 +1,12 @@
+parameter,values
+I,100;200;500;1000
+K,10;100;500;1000
+Gamma,1;1.25;1.5;1.75;2
+method,Bonferroni;naive;select;rank
+zeta,0.01:0.99:0.01
+replications,100
+alpha,0.05
+eta_true,0.10
+population_size,5000
+covariates,5
+seed,2024

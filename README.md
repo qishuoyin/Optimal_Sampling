@@ -1,6 +1,7 @@
 # OptimalSampling
 
-An R Package for Sensitivity Analysis for Treatment (Causal) Effect via Optimal Sample Split and Multiple Hypothesis Tests
+R package and paper-reproduction code for optimal sample splitting with multiple
+hypothesis tests in observational studies.
 
 ## Table of Contents
 
@@ -33,9 +34,28 @@ library(devtools)
 devtools::install_github("qishuoyin/Optimal_Sampling")
 ```
 
+### Environment for running the experiments (HPC)
+
+Two root-level files reproduce the R environment the experiment scripts use:
+
+- **`environment.yml`** — creates the `optimal_sampling_env` conda environment that the SLURM
+  scripts activate:
+  ```bash
+  conda env create -f environment.yml
+  conda activate optimal_sampling_env
+  Rscript install_packages.R        # finishes CRAN-only packages (e.g. simDAG)
+  ```
+- **`install_packages.R`** — idempotently installs the R package dependencies from CRAN. Use it
+  to top up the conda env, or on its own with an R module (`module load R/4.5.x`).
+
+The paper experiments require `simDAG` for new affected-proportion datasets and
+`MatchIt`/`optmatch` for full matching. The setup files also install the dependencies used by
+the original data-generation, application, and visualization scripts.
+
 
 ## Contents
-This repository contains two parts: the functions in the package for testing the treatment effect, and the experiments for conducting simulations and applications. The core functions that build up the treatment effect test package are: 
+Reusable statistical computation lives in the package under `R/`. Paper-specific
+configuration, runners, and artifact builders live under `exp/`.
 
 
 ### Core Functions
@@ -52,10 +72,17 @@ Evaluate power across different sample splits. (see `fun_power_evaluation.R`)
 
 ### Experiments
 
-The experiments conducted by this package are located in the `exp` folder. They are: 
+The repository retains exactly three paper experiments:
 
-- Simulations on various sample sizes and outcome space dimensions
-- Analysis of NHANES observational datasets of second-hand smoke on children's health
+- [`exp/exp1_simulation`](exp/exp1_simulation/README.md): simulation power and error
+  metrics, including Tables 1/S1/S5--S7 and Figures 1/S4.
+- [`exp/exp2_application`](exp/exp2_application/README.md): the NHANES application,
+  Tables 2--3, and Figure S6.
+- [`exp/exp3_sensitivity`](exp/exp3_sensitivity/README.md): the four planning-sensitivity
+  studies reported in Tables S2--S4/S8 and Figures S1--S3/S5.
+
+Error rates are outcomes of Experiment 1 and are computed from the same rejection
+matrices as power. There is no separate error-rate experiment or `exp4`.
 
 
 
@@ -109,6 +136,5 @@ If you want to use this package, please cite the following paper:
 ---
 
 This package is actively maintained. Contributions and feedback are welcome.
-
 
 

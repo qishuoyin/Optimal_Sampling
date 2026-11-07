@@ -1,38 +1,16 @@
-# Experiment 2: Real Data Application
+# Experiment 2: real-data application
 
-This directory contains experiments applying the proposed optimal sampling strategies to a real-world dataset. The goal is to demonstrate the practical utility of the **Optimal Sample Split Rank Tests** on observational data, comparing their performance against the baseline **Bonferroni Correction**.
+The package-driven entry point is `run.R`. It reproduces the paper's fixed 90% analysis split
+for all five sensitivity bounds and writes both the rank-method and full-sample Bonferroni
+decisions from the same input data. `build_artifacts.R` converts those decisions into main-paper
+Tables 2 and 3. Supplement Figure S6 remains the covariate-balance artifact.
 
+```bash
+Rscript exp/exp2_application/run.R /path/to/results
+Rscript exp/exp2_application/build_artifacts.R \
+  /path/to/results/application_results.rds /path/to/artifacts
+```
 
-## Main Application Scripts
-
-- `solve_optimal_fraction.R`: Solves for the optimal planning fraction numerically using a plasmode design and specified effect size and sensitivity parameters.
-  
-- `application_final_test_optimal_sampling.R`: Applies the optimal sample split method (rank-based) on the cleaned real dataset. This script computes test statistics and evaluates results under realistic design sensitivity scenarios.
-
-- `application_final_test_vanilla_Bonferroni.R`: Applies the standard Bonferroni correction method to the same dataset, serving as a benchmark for comparison.
-
-
-## Input/Output Data
-
-- `data_full_cleaned.csv`: The cleaned dataset used in the application study. This includes outcomes, treatment indicators, and other covariates.
-
-- `final_results.csv`: Contains the results from the real data analysis, including test outcomes and power estimates for both proposed and baseline methods.
-
-
-## Subdirectories
-
-📁 `visualization/`:  
-Stores visualization scripts and output plots for the covariate balance plot.
-
-📁 `script/`:  
-(If included) This folder is intended to contain `.sh` shell scripts for submitting application analyses and plotting jobs to HPC systems such as Slurm. 
-
-
-## Notes
-
-- All `.R` scripts assume the working directory is at the top level of the project.
-- Results are written to structured output folders for downstream visualization and analysis.
-- Helper functions (e.g., for power evaluation or matrix operations) are expected to be loaded from the shared `R/` directory.
-
-This directory complements the simulation studies in `exp1_simulation/` by validating the proposed sample split methods on real observational data.
+The versioned application input contains 153 matched pairs and 76 outcomes. The artifact
+builder also recreates supplement Figure S6 from `data_full_cleaned.csv`.
 

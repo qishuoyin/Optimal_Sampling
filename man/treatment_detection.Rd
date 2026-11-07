@@ -12,7 +12,6 @@ treatment_detection(Gamma, xi, V, method)
   \item{Gamma}{design sensitivity - float >= 1.}
   \item{xi}{fraction of analysis sample - float within (0, 1).}
   \item{V}{entire sample - matrix of dimension (I, K).}
-  \item{K}{number of outcomes - int.}
   \item{method}{"naive", "select", "rank" - string.}
 }
 \value{
